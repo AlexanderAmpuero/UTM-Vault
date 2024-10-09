@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e65189b7e58b8ec3",
+            "id": "8691a0564ca7b6b7",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "bdbe15c3ff4d765d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CSC108 Notes/Lists and Nested Loops.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CSC108 Notes/Week 6.md",
+                "file": "CSC108 Notes/Lists and Nested Loops.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CSC108 Notes/Week 6.md",
+                "file": "CSC108 Notes/Lists and Nested Loops.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CSC108 Notes/Week 6.md"
+                "file": "CSC108 Notes/Lists and Nested Loops.md"
               }
             }
           }
@@ -147,10 +160,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e65189b7e58b8ec3",
+  "active": "bdbe15c3ff4d765d",
   "lastOpenFiles": [
-    "Tutorial/Testing Grounds.md",
     "CSC108 Notes/Week 6.md",
+    "CSC108 Notes/Lists and Nested Loops.md",
+    "MAT102 Notes/Proof Methods.md",
+    "MAT102 Notes",
+    "Tutorial/Testing Grounds.md",
     "CSC108 Notes",
     "README.md",
     "Tutorial"

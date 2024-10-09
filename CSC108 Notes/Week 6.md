@@ -89,3 +89,14 @@ def make_unique(xs: list[int]) -> list[int]:
 			unique_lst.append(i)
 	return unique_lst
 ```
+##### == v. is
+```python
+>>> a = [1, 2, 3, 4, 5]
+>>> b = [1, 2, 3, 4, 5]
+>>> b == a
+True
+>>> b is a
+False
+```
+- "b is a" checks whether or not b and a have the same id in the system memory
+- "b == a" checks whether or not the values within b and a are the same
