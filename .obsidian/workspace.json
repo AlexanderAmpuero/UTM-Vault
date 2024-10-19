@@ -20,19 +20,31 @@
             }
           },
           {
-            "id": "bdbe15c3ff4d765d",
+            "id": "79b4d116cf61b849",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSC108 Notes/Lists and Nested Loops.md",
+                "file": "CSC108 Notes/Week 6.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9aef142fad3cc767",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CSC108 Notes/Week 7.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CSC108 Notes/Lists and Nested Loops.md",
+                "file": "CSC108 Notes/Week 7.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CSC108 Notes/Lists and Nested Loops.md",
+                "file": "CSC108 Notes/Week 7.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CSC108 Notes/Lists and Nested Loops.md"
+                "file": "CSC108 Notes/Week 7.md"
               }
             }
           }
@@ -160,10 +172,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bdbe15c3ff4d765d",
+  "active": "9aef142fad3cc767",
   "lastOpenFiles": [
     "CSC108 Notes/Week 6.md",
+    "CSC108 Notes/Week 7.md",
     "CSC108 Notes/Lists and Nested Loops.md",
+    "CSC108 Notes/Week 7.md",
     "MAT102 Notes/Proof Methods.md",
     "MAT102 Notes",
     "Tutorial/Testing Grounds.md",
