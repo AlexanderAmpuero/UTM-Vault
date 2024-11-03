@@ -74,7 +74,8 @@ def highest_rated_band(file_name: str) -> str:
 ```
 - Gets the difference in ascii values and return the difference as a position in the alphabet
 
-##### Dictionaries
+#### Dictionaries
+- Note: indexing into a dictionary refers to the key, ex. xs['h']
 ```python
 >>> xs = {'h': 1, 'e': 1, 'l': 3, 'o': 2, 'w': 1, 'r': 1, 'd': 1}
 >>> a = {[1]: 'a', [2]:'b'} # This Cannot be a dictionary
