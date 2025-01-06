@@ -31,3 +31,9 @@ To apply styling to the website, you give it to CSS who can change font, size, l
 Javascript ensures that the clock actually functions, such as actually increasing in time. This data is requested by the HTML and CSS.
 
 Imagine you are making a website which contains a video, and a single button below it. The HTML code tell us that the video and button exist, where the CSS creates styling for the video and button which make it readable and usable. Lastly, the Javascript allows the video to be played and continuously checks if the video is currently playing, if not, updating the button to say that it is not playing. 
+
+A typical website will contain all three of these languages.
+- HTML by definition is hyperlinks
+
+###### Web Application
+A website is informative whereas a web application is more interactive, ex. Wikipedia v. UberEats
