@@ -76,7 +76,7 @@ if __name__ = '__main__':
 	mess_about(count, word)
 ```
 
-In the above function, every variable within the parentheses of the first line is a parameter within the function 'mess_about'. When we call this function in the below if statement, there is an argument in each parameter called count and word. 
+In the above function, every variable within the parentheses of the first line is a parameter within the function 'mess_about'. When we call this function in the below if statement, there is an argument for each parameter called count and word. 
 
 ## How are Function Calls Tracked?
 Python must keep track of functions that are running, this tracking system is called stack frame, or just 'frame' for short. 
@@ -122,6 +122,8 @@ if __name__ == '__main__':
 ```
 
 Instead, we should have used this code which correctly mutates the function. This works because rather than changing the reference variable, we change the contents of existing mutable variable. 
+
+Regarding lists, when adding or altering a list by using another id, it creates a new id for the list, treating the original aliased list as an immutable object temporarily. 
 
 #### Moral of the Story
 When working with objects that contain references to other objects it gets tricky. the bottom line is that you must know which objects are mutable or immutable, at each level of their structure. (think functions and stack frames). Constructing memory model diagrams can help greatly. 
