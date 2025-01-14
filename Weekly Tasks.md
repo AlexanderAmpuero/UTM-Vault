@@ -1,0 +1,9 @@
+- [ ] CSC148 Readings ⏳ 2025-01-19 🔁 🏁 every week
+- [ ] CSC148 Prep ⏳ 2025-01-19 🔁 🏁 every week
+- [ ] MAT136 Readings ⏳ 2025-01-19 🔁 🏁 every week
+- [ ] MAT136 Prep ⏳ 2025-01-19 🔁 🏁 every week
+- [ ] MAT136 Assignment ⏳ 2025-01-19 🔁 🏁 every week
+- [ ] MAT102 Reading ⏳ 2025-01-19 🔁 🏁 every week
+- [ ] MAT102 Mathmatize ⏳ 2025-01-19 🔁 🏁 every week
+- [ ] UTM118 Discussion Post ⏳ 2025-01-19 🔁 🏁 every week
+- [ ] UTM118 Reply ⏳ 2025-01-19 🔁 🏁 every week

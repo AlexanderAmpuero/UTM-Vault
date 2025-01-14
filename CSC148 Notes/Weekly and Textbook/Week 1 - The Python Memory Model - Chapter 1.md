@@ -128,7 +128,7 @@ Regarding lists, when adding or altering a list by using another id, it creates 
 #### Moral of the Story
 When working with objects that contain references to other objects it gets tricky. the bottom line is that you must know which objects are mutable or immutable, at each level of their structure. (think functions and stack frames). Constructing memory model diagrams can help greatly. 
 
-# Chapter 1.3 - The function Design Recipe
+# Chapter 1.3 - The Function Design Recipe
 
 The Function Design Recipe exists as a method of approaching problem-solving in python. The recipe ensures that code is written after a docstring has been created such that all parties can understand the work.
 
@@ -454,6 +454,7 @@ def test_new_item_count(lst: list[int], n1: int, n2: int) -> None:
 #### Further Reading
 If you want to learn more, you can find further information about Hypothesis in the official Hypothesis Python documentation because we are only scratching the surface
 
-
+For Hypothesis testing examples, visit the below link
+https://hypothesis.readthedocs.io/en/latest/examples.html
 
 
