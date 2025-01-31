@@ -1,3 +1,8 @@
+---
+tags:
+  - csc148
+---
+
 # Chapter 1.1 - Introduction
 ## Data
 Data in python has 3 distinct types, id, type, and value
