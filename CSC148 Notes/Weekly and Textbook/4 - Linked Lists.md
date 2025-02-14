@@ -1,3 +1,8 @@
+---
+tags:
+  - csc148
+---
+
 # Chapter 4.1 - Introduction to Linked Lists
 We've seen that Python lists are an array-based implementation of the list ADT, and that they have some *drawbacks*.
 Inserting and deleting items in a list can require shifting many elements in the program's memory. For example, we saw how inserting and deleting at the *front* of a built-in list takes time proportional to the length of the list, since every item needs to be shifted. 
