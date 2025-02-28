@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSC148 Notes/Weekly and Textbook/5 - Recursion.md",
+                "file": "CSC148 Notes/Weekly and Textbook/4 - Linked Lists.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5 - Recursion"
+              "title": "4 - Linked Lists"
             }
           },
           {
@@ -55,16 +55,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Weekly Tasks.md",
+                "file": "CSC148 Notes/Weekly and Textbook/6 - Trees and Mutation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Weekly Tasks"
+              "title": "6 - Trees and Mutation"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -83,7 +83,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -120,8 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 249.5,
-    "collapsed": true
+    "width": 249.5
   },
   "right": {
     "id": "fbbb1b0d8445a5a4",
@@ -207,20 +207,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0ef83125e4d0ad9c",
+  "active": "fa8c07c4e9a93b62",
   "lastOpenFiles": [
-    "CSC148 Notes/Weekly and Textbook/2 - Object-Oriented Programming.md",
-    "CSC148 Notes/Weekly and Textbook/5 - Recursion.md",
-    "CSC148 Notes/Weekly and Textbook/4 - Linked Lists.md",
-    "CSC148 Notes/Weekly and Textbook/Textbook.md",
-    "CSC148 Notes/Weekly and Textbook/3 - Abstract Data Types.md",
+    "CSC148 Notes/Image Sources/Pasted image 20250227185841.png",
+    "CSC148 Notes/Image Sources/Pasted image 20250227185713.png",
     "Weekly Tasks.md",
+    "CSC148 Notes/Weekly and Textbook/6 - Trees and Mutation.md",
+    "CSC148 Notes/Weekly and Textbook/4 - Linked Lists.md",
+    "CSC148 Notes/Weekly and Textbook/2 - Object-Oriented Programming.md",
+    "CSC148 Notes/Weekly and Textbook/3 - Abstract Data Types.md",
+    "CSC148 Notes/Weekly and Textbook/1 - The Python Memory Model.md",
+    "CSC148 Notes/Weekly and Textbook/5 - Recursion.md",
+    "CSC148 Notes/Weekly and Textbook/Textbook.md",
     "CSC148 Notes/Image Sources/Pasted image 20250131223111.png",
     "CSC148 Notes/Image Sources/Pasted image 20250131222815.png",
     "CSC148 Notes/Image Sources/Pasted image 20250123163900.png",
     "CSC148 Notes/Image Sources/Pasted image 20250123155417.png",
     "CSC148 Notes/Image Sources/Pasted image 20250123155120.png",
-    "CSC148 Notes/Weekly and Textbook/1 - The Python Memory Model.md",
     "CSC148 Notes/Course Syllabus.md",
     "CSC148 Notes/Weekly Prep.md",
     "CSC108 Notes/Week 13 - OOP Programming.md",

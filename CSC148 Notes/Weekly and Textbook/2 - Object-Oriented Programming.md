@@ -93,7 +93,7 @@ This error occurs because type annotation doesn't create the variable, so the pr
 In oder to initialize instance attributes for an instance of a class, we define a special method inside the class called ____init____ or in english, an initializer. This is what it could look like. 
 ```python
 class Tweet
-	# previos content omitted for brevity
+	# previous content omitted for brevity
 
 	def __init__(self, who: str, when: date, what: str) -> None:
 		""" Initialize a new Tweet """
@@ -108,7 +108,7 @@ Notice how we didn't mention the initializer __*___init__*__ by name. This is be
 Now imagine we want to assign the variable userid to something now from the class, we cannot just say userid = x and assign userid a value because it would create a new variable in the stack frame, rather, we need to put it into a new object. Fortunately for us, *self* refers to the new object, and we can go into the object by using a '.' to refer to it like so
 ```python
 class Tweet
-	# previos content omitted for brevity
+	# previous content omitted for brevity
 
 	def __init__(self, who: str, when: date, what: str) -> None:
 		""" Initialize a new Tweet """

@@ -223,7 +223,7 @@ def append(self, item: Any) -> None:
         # After the loop, curr is the last node in the LinkedList.
         # assert curr is not None and curr.next is None
 ```
-At this point, the astute reader will point out a flaw in this change: we aren't  guranteed that `curr` starts off as a node - it could be `None`. But because we don't want to deal with that, we just say `TODO: what if curr starts off as None?`
+At this point, the astute reader will point out a flaw in this change: we aren't  guaranteed that `curr` starts off as a node - it could be `None`. But because we don't want to deal with that, we just say `TODO: what if curr starts off as None?`
 
 So then after the loop ends, we know that `curr` refers to the last node in the linked list, and we are finally in a position to add the given item to the linked list. To do so, we need to create a new node and then connect it in.
 

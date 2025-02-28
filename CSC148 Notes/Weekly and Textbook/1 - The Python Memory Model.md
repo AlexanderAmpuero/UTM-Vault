@@ -136,7 +136,6 @@ When working with objects that contain references to other objects it gets trick
 # Chapter 1.3 - The Function Design Recipe
 
 The Function Design Recipe exists as a method of approaching problem-solving in python. The recipe ensures that code is written after a docstring has been created such that all parties can understand the work.
-
 ## Preconditions
 First, the docstring of a code is required as it does not only describe what a function does through text and examples, but, also outline the requirements necessary to use the function. 
 An essential requirement is the type contract: this tells a user what type of argument to use for a function.
@@ -150,8 +149,7 @@ def decrease_at(numbers: list[int]) -> int:
 	'''
 ```
 
-A precondition of a function is extremely important sinc
-e they tell you which way to use the function. They limit how a function can be used while allowing the user to express their arguments in a way that satisfies the properties of the function. 
+A precondition of a function is extremely important since they tell you which way to use the function. They limit how a function can be used while allowing the user to express their arguments in a way that satisfies the properties of the function. 
 
 Example: a binary search function. In this function the precondition is that the parameters require it to be given a sorted list, otherwise the search method would not work. Rather than programming the function to determine whether or not the list is already sorted, it is smarter to give a precondition as if you had implemented the sorted list checker, the code could be slower than a linear search. 
 
