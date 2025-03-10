@@ -121,7 +121,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 249.5
+    "width": 249.5,
+    "collapsed": true
   },
   "right": {
     "id": "fbbb1b0d8445a5a4",
@@ -137,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CSC108 Notes/Week 9 - Lazy Literature and Testing.md",
+                "file": "CSC148 Notes/Weekly and Textbook/6 - Trees and Mutation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +148,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Week 9 - Lazy Literature and Testing"
+              "title": "Backlinks for 6 - Trees and Mutation"
             }
           },
           {
@@ -207,12 +208,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fa8c07c4e9a93b62",
+  "active": "caee395f31cd9fe3",
   "lastOpenFiles": [
+    "CSC148 Notes/Weekly and Textbook/6 - Trees and Mutation.md",
+    "CSC148 Notes/Weekly and Textbook/7 - Binary and Efficiency Trees.md",
+    "Weekly Tasks.md",
     "CSC148 Notes/Image Sources/Pasted image 20250227185841.png",
     "CSC148 Notes/Image Sources/Pasted image 20250227185713.png",
-    "Weekly Tasks.md",
-    "CSC148 Notes/Weekly and Textbook/6 - Trees and Mutation.md",
     "CSC148 Notes/Weekly and Textbook/4 - Linked Lists.md",
     "CSC148 Notes/Weekly and Textbook/2 - Object-Oriented Programming.md",
     "CSC148 Notes/Weekly and Textbook/3 - Abstract Data Types.md",
@@ -248,7 +250,6 @@
     "CSC148 Notes/Image Sources/CSC148_ Course Syllabus.pdf",
     "CSC148 Notes",
     "Web Development - Meta",
-    "CSC108 Notes/Images/Pasted image 20241113114223.png",
     "CSC108 Notes/Week.md",
     "CSC108 Notes/Lists and Nested Loops.md",
     "MAT102 Notes/Proof Methods.md",

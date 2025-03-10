@@ -2,9 +2,9 @@
 - [ ] CSC148 Prep ⏳ 2025-01-19 🔁 🏁 every week
 - [ ] MAT136 Readings ⏳ 2025-01-19 🔁 🏁 every week
 - [ ] MAT136 Prep ⏳ 2025-01-19 🔁 🏁 every week
-- [x] MAT136 Assignment ⏳ 2025-01-19 🔁 🏁 every week ✅ 2025-02-27
+- [x] MAT136 Assignment ⏳ 2025-01-19 🔁 🏁 every week ✅ 2025-03-07
 - [x] MAT102 Reading ⏳ 2025-01-19 🔁 🏁 every week ✅ 2025-02-27
-- [ ] MAT102 Mathmatize ⏳ 2025-01-19 🔁 🏁 every week
-- [x] UTM118 Discussion Post ⏳ 2025-01-19 🔁 🏁 every week ✅ 2025-02-27
-- [x] UTM118 Reply ⏳ 2025-01-19 🔁 🏁 every week ✅ 2025-02-27
-- [x] Statistics Assignment ⏳ 2025-01-19 🔁 🏁 every week ✅ 2025-02-27
+- [x] MAT102 Mathmatize ⏳ 2025-01-19 🔁 🏁 every week ✅ 2025-03-01
+- [ ] UTM118 Discussion Post ⏳ 2025-01-19 🔁 🏁 every week
+- [ ] UTM118 Reply ⏳ 2025-01-19 🔁 🏁 every week
+- [x] Statistics Assignment ⏳ 2025-01-19 🔁 🏁 every week ✅ 2025-03-07

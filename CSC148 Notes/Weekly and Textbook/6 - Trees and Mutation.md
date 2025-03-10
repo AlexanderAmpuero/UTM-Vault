@@ -188,3 +188,460 @@ def _str_indented(self, depth: int) -> str:
             s += subtree._str_indented(depth + 1)
         return s
 ```
+- Now we can implement `__str__` simply by making a call to `_str_indented`
+```python
+def __str__(self) -> str:
+    """Return a string representation of this tree.
+    """
+    return self._str_indented(0)
+
+>>> t1 = Tree(1, [])
+>>> t2 = Tree(2, [])
+>>> t3 = Tree(3, [])
+>>> t4 = Tree(4, [t1, t2, t3])
+>>> t5 = Tree(5, [])
+>>> t6 = Tree(6, [t4, t5])
+6
+  4
+    1
+    2
+    3
+  5
+```
+
+## Technical Note: Optional Parameters
+One way to customize the behaviour of functions is to make a parameter **optional** by giving it a **default value**. This can be done for any function, recursive or non-recursive, inside or outside a class. The syntax for doing so is quite simple; we use it in this revised version.
+```python
+def _str_indented(self, depth: int=0) -> str:
+    """Return an indented string representation of this tree.
+
+    The indentation level is specified by the <depth> parameter.
+    """
+    if self.is_empty():
+        return ''
+    else:
+        s = '  ' * depth + str(self._root) + '\n'
+        for subtree in self._subtrees:
+            # Note that the 'depth' argument to the recursive call is
+            # modified.
+            s += subtree._str_indented(depth + 1)
+        return s
+```
+In this version of `_str_indented`, `depth` is an optional parameter that can either be included or not included when this method is called. 
+So we can call `t._str_indented(5)`, which sets the depth equal to 5, but if we called it as `t._str_indented()`, it would still work, setting depth to equal 0. 
+Optional parameters are **VERY HELPFUL** is it allows for more flexible functions and methods for a variety of situations. Keep in mind,
+- All optional parameters must appear _after_ all of the required parameters in the function header.
+- **Do NOT** use mutable values like lists for your optional parameters. (If you do, the code will appear to work, until it mysteriously doesn’t. Feel free to ask more about this during office hours.) Instead, use optional parameters with immutable values like integers, strings, and `None`.
+
+# 6.3 - Mutating Trees
+Now that we have some experience working with trees, let's talk about mutating them. There are two fundamental mutating operations that we want, insertion and deletion. Insertion will be covered separately.
+```python
+def delete_item(self, item: Any) -> bool:
+    """Delete *one* occurrence of <item> from this tree.
+
+    Return True if <item> was deleted, and False otherwise.
+    Do not modify this tree if it does not contain <item>.
+    """
+```
+To implement this method, we begin by using our code template. For this case we'll use the three-branch version, which explicitly separate the size-one case.
+```python
+def delete_item(self, item: Any) -> bool:
+    """Delete *one* occurrence of <item> from this tree.
+
+    Return True if <item> was deleted, and False otherwise.
+    Do not modify this tree if it does not contain <item>.
+    """
+    if self.is_empty():
+        ...
+    elif self._subtrees == []:
+        ...
+    else:
+        ...
+        for subtree in self._subtrees:
+            ... subtree.delete_item(item) ...
+        ...
+```
+In the recursive step, we're going to first check whether the item is equal to the root; if it is, then we only need to remove the root, otherwise we have to recurse and look through the subtrees.
+```python
+def delete_item(self, item: Any) -> Bool:
+    if self.is_empty():
+        return False              # item is not in the tree
+    elif self._subtrees == []:
+        if self._root != item:    # item is not in the tree
+            return False
+        else:                     # resulting tree should be empty
+            self._root = None
+            return True
+    else:
+        if self._root == item:
+            self._delete_root()   # delete the root
+            return True
+        else:
+            for subtree in self._subtrees:
+                subtree.delete_item(item)
+```
+Deleting the root when there are subtrees is far more challenging, so we'll do this later. For now we can use a helpful method called `_delete_root` that doesn't exist yet, it's just a reminder to do it later.
+The final `else` branch may seem done as well, it it has serious problems.
+1. It doesn’t return anything, violating this method’s type contract.
+2. If one of the recursive calls successfully finds and deletes the item, no further subtrees should be modified (or even need to be recursed on).
+The solution to both of these problem like in the fact that our loop right now doesn't store the value of recursive calls anywhere. The key insight is that we should use the return value of each recursive call to determine whether an item was deleted, and whether to continue on to the next subtree:
+```python
+def delete_item(self, item: Any) -> Bool:
+    if self.is_empty():
+        return False              # item is not in the tree
+    elif self._subtrees == []:
+        if self._root != item:    # item is not in the tree
+            return False
+        else:                     # resulting tree should be empty
+            self._root = None
+            return True
+    else:
+        if self._root == item:
+            self._delete_root()   # delete the root
+            return True
+        else:
+            for subtree in self._subtrees:
+                deleted = subtree.delete_item(item)
+                if deleted:
+                    # One occurrence of the item was deleted, so we're done.
+                    return True
+
+            # If we don't return inside the loop, the item is not deleted from
+            # any of the subtrees. In this case, the item does not appear
+            # in <self>.
+            return False
+```
+There are *many, many* ways of doing this. Here's one where we just pick the right most subtree, and "promote" its root and subtrees by moving them up a level in the tree.
+```python
+def _delete_root(self) -> None:
+    """Remove the root item of this tree.
+
+    Precondition: this tree has at least one subtree.
+    """
+    # Get the last subtree in this tree.
+    chosen_subtree = self._subtrees.pop()
+
+    self._root = chosen_subtree._root
+    self._subtrees.extend(chosen_subtree._subtrees)
+```
+This may be very satisfying, because while the result certainly is still a tree, it feels like we've changed a lot of the structure of the original tree. I should try making this myself later #148practice
+
+## The Problem of Empty Trees
+We're not quite done. 
+In our current implementation of `delete_item`, suppose we delete an item that is a leaf of the given tree. We'll successfully delete that item, but the result of doing so is an empty tree - so its parent will contain an empty tree in its subtrees list. Ex. 
+```python
+>>> t = Tree(10, [Tree(1, []), Tree(2, []), Tree(3, [])])  # A tree with leaves 1, 2, and 3
+>>> t.delete_item(1)
+True
+>>> t.delete_item(2)
+True
+>>> t.delete_item(3)
+True
+>>> t._subtrees
+[<__main__.Tree object at 0x081B4770>, <__main__.Tree object at 0x081B49F0>, <__main__.Tree object at 0x0845BB50>]
+>>> t._subtrees[0].is_empty() and t._subtrees[1].is_empty() and t._subtrees[2].is_empty()
+True
+```
+Our tree `t` now has three empty *subtrees*! This is certainly unexpected, and depending on how we've written our `Tree` methods, this may cause errors in our code. At the very least, these empty subtrees are taking up unnecessary space in our program, making it slower
+### Fixing the Problem
+Now we will change our previous deletion code, so that if we detect a leaf, we should remove the now-empty subtree from its parent's subtree list. This involves only a very small code change in `delete_item`
+```python
+def delete_item(self, item: Any) -> Bool:
+    if self.is_empty():
+        return False              # item is not in the tree
+    elif self._subtrees == []:
+        if self._root != item:    # item is not in the tree
+            return False
+        else:                     # resulting tree should be empty
+            self._root = None
+            return True
+    else:
+        if self._root == item:
+            self._delete_root()   # delete the root
+            return True
+        else:
+            for subtree in self._subtrees:
+                deleted = subtree.delete_item(item)
+                if deleted and subtree.is_empty():
+                    # The item was deleted and the subtree is now empty.
+                    # We should remove the subtree from the list of subtrees.
+                    # Note that mutating a list while looping through it is
+                    # EXTREMELY DANGEROUS!
+                    # We are only doing it because we return immediately
+                    # afterwards, and so no more loop iterations occur.
+                    self._subtrees.remove(subtree)
+                    return True
+                elif deleted:
+                    # The item was deleted, and the subtree is not empty.
+                    return True
+
+            # If we don't return inside the loop, the item is not deleted from
+            # any of the subtrees. In this case, the item does not appear
+            # in <self>.
+            return False
+```
+As it says in the code, mutating a list while using it is **extremely dangerous**, we avoid this problem here right after removing the subtree, we stop the method by returning `True`.
+
+Removing all those empty subtrees was annoying, so if we want we can just include it to our representation invariant. 
+```python
+class Tree:
+    # === Private Attributes ===
+    _root: Optional[Any]
+    _subtrees: list[Tree]
+
+    # === Representation Invariants ===
+    # - If self._root is None then self._subtrees is an empty list.
+    #   This setting of attributes represents an empty tree.
+    #
+    #   Note: self._subtrees may be empty when self._root is not None.
+    #   This setting of attributes represents a tree consisting of just one value.
+    #
+    # - (NEW) self._subtrees does not contain any empty trees.
+```
+#148practice If you want further practice, consider the `insertion`, or what if we wanted our `delete` to remove all subtrees as well?
+
+# 6.4 - Introduction to Binary Search Trees
+We’re going to learn about a new data structure called the **Binary Search Tree** (or BST). Binary search trees make certain operations fast, and are the basis of advanced data structures you’ll learn about in [CSC263](https://student.utm.utoronto.ca/calendar/course_detail.pl?Depart=7&Course=CSC263H5) that are even more efficient.
+
+## The Multiset ADT
+Our goal this week is to use the tree concept and apply them to the Multiset ADT, which supports the following interactions.
+- check whether the collection is empty
+- check whether a given item is in the collection
+- add a given item to the collection
+- remove a given item from the collection
+
+### Searching in Lists
+For lists, the obvious iterative algorithm for any kind of list is to loop through every item in the list and stop when an item is found. When the item isn't in the list, every item must be checked, making this a *linear time* operation.
+It turns out that the `Tree.__contains__` method has the same behaviour: if the item is not in the tree, every item must be checked, so switching from lists to trees isn't enough improvement.
+
+However, a great insight of computer science is that adding some additional structure to input data allows for new and more efficient algorithms. You have seen a simple form of this called *augmentation* in previous labs, but we will use more complex *structures* now. 
+
+In the case of Python lists, if we assume the list is *sorted* we can then use the **binary search algorithm** to greatly improve the efficiency of the search. 
+Previously we attempted this, and found that there was many drawbacks due to working with array-based lists, specifically, the insertion and deletion. Thus, we can use trees to solve this flaw.
+## Binary Search Trees: Definitions
+To do this, we will combine the branching structure of trees with the idea of binary search to develop a notion of a “sorted tree”, which we will call a **Binary Search Tree (BST)**.
+
+A **binary tree** is a tree in which every item has at most two subtrees. An item in a binary tree satisfies the **binary search tree property** if its value is greater than or equal to all items in the left subtree, and less than or equal to all items in its right subtree. 
+A binary tree is a **binary search tree** if _every_ item in the tree satisfies the binary search tree property (the “every” is important: in general, it’s possible that some items satisfy this property but others don’t).
+
+it is important to note that **Binary Search Trees** naturally represent *sorted data*, that is, if the data doesn't arrive for insertion in sorted order, the BST keeps track of it in a sorted fashion.
+BST's are extremely efficient in searching for an item; but unlike sorted Python lists, they can be far more efficient at insertion and deletion while maintaining sorting.
+
+# 6.5 - Binary Search Tree Implementation and Search
+Our implementation of a `BinarySearchTree` class is obviously based on the `Tree` implementation. The first difference is that since there are two subtrees, we know their left/right ordering matters; requiring attributes `_left` and `_right`.
+```python
+class BinarySearchTree:
+    """Binary Search Tree class.
+
+    This class represents a binary tree satisfying the Binary Search Tree
+    property: for every node, its value is >= all items stored in its left
+    subtree, and <= all items stored in its right subtree.
+    """
+    # === Private Attributes ===
+    # The item stored at the root of the tree, or None if the tree is empty.
+    _root: Optional[Any]
+    # The left subtree, or None if the tree is empty.
+    _left: Optional[BinarySearchTree]
+    # The right subtree, or None if the tree is empty.
+    _right: Optional[BinarySearchTree]
+```
+Another difference between the `BinarySearchTree` and the `Tree` is in how we distinguish between empty and non-empty trees. In the `Tree` class, an empty tree has a `_root` value of `None`, and an *empty list* `[]` for its list of subtrees. In the `BinarySearchTree` class, an empty tree also has a `_root` value of `None`, but its `_left` and `_right` attributes are set to `None` as well.
+Moreover, for `BinarySearchTree`, an empty tree is the _only_ case where any of the attributes can be `None`; when we represent a non-empty tree, we do so by storing the root item (which isn’t `None`) at the root, and storing `BinarySearchTree` objects in the `_left` and `_right` attributes. The attributes `_left` and `_right` might refer to _empty_ binary search trees, but this is different from them being `None`!
+
+Any method we add to the `BinarySearchTree` class (a) can rely upon these properties, and (b) must maintain these properties, since the other methods rely upon them. This is so important that we document them in our representation invariants, along with the BST property itself.
+
+```python
+    # === Representation Invariants ===
+    #  - If _root is None, then so are _left and _right.
+    #    This represents an empty BST.
+    #  - If _root is not None, then _left and _right are BinarySearchTrees.
+    #  - (BST Property) All items in _left are <= _root,
+    #    and all items in _right are >= _root.
+```
+Now we will implement the initializer and `is_empty` methods for the class.
+```python
+def __init__(self, root: Optional[Any]) -> None:
+	"""Initialize a new BST containing only the given root value.
+
+	If <root> is None, initialize an empty BST.
+	"""
+	if root is None:
+		self._root = None
+		self._left = None
+		self._right = None
+	else:
+		self._root = root
+		self._left = BinarySearchTree(None)   # self._left is an empty BST
+		self._right = BinarySearchTree(None)  # self._right is an empty BST
+
+def is_empty(self) -> bool:
+	"""Return whether this BST is empty.
+	"""
+	return self._root is None
+```
+We do not allow client code to pass in left and right subtrees as parameters to the initializer. This is because binary search trees have a much stronger restriction on where values can be located in the tree, and so a separate method is used to insert new values into the tree.
+
+## Searching A Binary Search Tree
+Recall that the key insight of the binary search algorithm in a sorted list is that by comparing the target item with the *middle* of the list, we can immediately cut in half the remaining items to be search. This is similar for a BST.
+For general trees, the standard search algorithm is to compare the `item` against the root, and then search in each of the subtrees until either the item is found, or all the subtrees have been searched. When `item` is not in the tree, every item must be searched.
+In stark contrast, for BSTs _the initial comparison to the root tells you which subtree you need to check_. That is, only one recursive call needs to be made, rather than two! (this is very cool, allows for faster then O(n) lookups)
+```python
+def __contains__(self, item: Any) -> bool:
+	"""Return whether <item> is in this BST.
+	"""
+	if self.is_empty():
+		return False
+	else:
+		if item == self._root:
+			return True
+		elif item < self._root:
+			return item in self._left   # or, self._left.__contains__(item)
+		else:
+			return item in self._right  # or, self._right.__contains__(item)
+```
+While this code closely matches the empty-check for the general `Tree` class, we can combine the two levels of nested ifs to get a more concise version.
+```python
+def __contains__(self, item: Any) -> bool:
+	"""Return whether <item> is in this BST.
+	"""
+	if self.is_empty():
+		return False
+	elif item == self._root:
+		return True
+	elif item < self._root:
+		return item in self._left   # or, self._left.__contains__(item)
+	else:
+		return item in self._right  # or, self._right.__contains__(item)
+```
+
+# 6.6 - Mutating Binary Search Trees
+Now that we know how searching works, we will study two mutating methods of the Multiset/Collection ADT: insertion and deletion.
+The idea is simple, given an item to delete, we search for the item, if we find it, it will be at the root of some subtree and we will delete it. 
+```python
+def delete(self, item: Any) -> None:
+	"""Remove *one* occurrence of <item> from this BST.
+
+	Do nothing if <item> is not in the BST.
+	"""
+	if self.is_empty():
+		pass
+	elif self._root == item:
+		self.delete_root()
+	elif item < self._root:
+		self._left.delete(item)
+	else:
+		self._right.delete(item)
+
+def delete_root(self) -> None:
+	"""Remove the root of this tree.
+
+	Precondition: this tree is *non-empty*.
+	"""
+```
+We are once again using the helper method strategy, using `delete_root`, to pull part of the required functionality thats a bit tricky.
+```python
+def delete_root(self):
+	if self._left.is_empty() and self._right.is_empty():
+		self._root = None
+		self._left = None
+		self._right = None
+```
+Now you may wonder, what about the case where `self._right` is not empty or `self._left`?
+We can analyze the tree structure for two easy special cases.
+```python
+def delete_root(self) -> None:
+	if self._left.is_empty() and self._right.is_empty():
+		self._root = None
+		self._left = None
+		self._right = None
+	elif self._left.is_empty():
+		# "Promote" the right subtree.
+		self._root, self._left, self._right = \
+			self._right._root, self._right._left, self._right._right
+	elif self._right.is_empty():
+		# "Promote" the left subtree.
+		self._root, self._left, self._right = \
+			self._left._root, self._left._left, self._left._right
+```
+Finally, we need to add the case for when both subtrees aren't empty. Rather than restructuring the tree, we can fill the "hole" at the root by *replacing* the root item with another value from the tree.
+The key insight is that there are **only two values** we could replace it with and still maintain the BST property: the maximum (or, rightmost) value in the left subtree, or the minimum (or, leftmost) value in the right subtree. We’ll pick the left subtree here.
+```python
+def delete_root(self) -> None:
+	if self._left.is_empty() and self._right.is_empty():
+		self._root = None
+		self._left = None
+		self._right = None
+	elif self._left.is_empty():
+		# "Promote" the right subtree.
+		self._root, self._left, self._right = \
+			self._right._root, self._right._left, self._right._right
+	elif self._right.is_empty():
+		# "Promote" the left subtree.
+		self._root, self._left, self._right = \
+			self._left._root, self._left._left, self._left._right
+	else:
+		self._root = self._left.extract_max()
+
+def extract_max(self) -> object:
+	"""Remove and return the maximum item stored in this tree.
+
+	Precondition: this tree is *non-empty*.
+	"""
+```
+Now, we've used another helper function `extract_max`. Finding the max item is easy: just keep traversing right for bigger values. Furthermore, removing the max is easier than BST deletion as the max has at most 1 child.
+```python
+def extract_max(self) -> object:
+	"""Remove and return the maximum item stored in this tree.
+
+	Precondition: this tree is *non-empty*.
+	"""
+	if self._right.is_empty():
+		max_item = self._root
+		# Once again, "Promote" the left subtree.
+		self._root, self._left, self._right = \
+			self._left._root, self._left._left, self._left._right
+		return max_item
+	else:
+		return self._right.extract_max()
+```
+### One Deletion Exercise
+
+Try implementing `delete_all`, which is similar to `delete_item` except that it deletes _all_ occurrences of an item from a BST. Think carefully about how to handle duplicate elements!
+
+# 6.7 - Binary Search Trees and Running Time
+Now we return for the only reason we actually wanted a BST, a more efficient run time which supports search, insertion, and deletion.
+The implementation of `__contains__`, `insert`, and `delete` for BSTs all have the same structure, in that they all make just one recursive call inside the recursive step (they each use the BST property to decide which subtree to recurse into). Let’s focus on `__contains__` here.
+
+```python
+def __contains__(self, item: Any) -> bool:
+	"""Return whether <item> is in this BST.
+	"""
+	if self.is_empty():
+		return False
+	else:
+		if item == self._root:
+			return True
+		elif item < self._root:
+			return item in self._left   # or, self._left.__contains__(item)
+		else:
+			return item in self._right  # or, self._right.__contains__(item)
+```
+
+In this code, every recursive call goes one level down into the tree, so the max number of calls that can be made is equal to the height of the tree plus 1, since the extra call comes because our implementation includes the empty subtree of a leaf.
+Since each line of code inside `__contains__` _except_ the recursive call runs in constant time (i.e., doesn’t depend on the size of the tree), the total running time is proportional to the number of recursive calls made.
+
+Because we argued the max number of recursive calls is roughly the height of the tree, we could say the running time is **O(h)**, where h is the height of the tree. However, this is only partially correct. In fact, if we "get lucky" and search for the root item of the tree, we only ever make one comparison.
+
+## Worst-case vs Best-case Running Time
+So far, we've focused on how running time depends on the *size* of its inputs, however, very often the case is that even for a fixed input size, the running time varies depending on some other properties of the inputs. ex. searching for the root item of a BST vs. searching for an item very deep in a BST.
+We know that where *h* is the height of the tree, the time taken always is equal to *h + 1* 
+We define the **worst-case running time** of an algorithm as a function _WC(n)_, which maps an input size _n_ to the _maximum_ possible running time for all inputs of size _n_. What we colloquially refer to as the “worst case” for an algorithm is actually a **family of inputs**, one per input size, where each input is one that results in the maximum running time for its size.
+Since the worst-case running time is a function, we can describe it using our Big-Oh notation. We can say that for BST search, the _worst-case_ running time is _O(h)_, where _h_ is the height of the tree.
+Similarly, in Big-Oh notation, we can say that the best case is *O(1)*, since `__contains__` immediately verifies that the root is equal to the item we're searching for.
+
+## Tree Height and Size
+You may believe that array/linked lists, since they are O(n) for searching are equal to O(h) in the BST's, but this is where our choice of variables truly matters.
+We know that BST search is, in the worst case, proportional to the height of the BST; but remember the height of a BST can be much smaller than its size. 
+If we consider a BST with n items, its height can be as large as n (much like a list), or it can be as small as *log(n)*. Why? put it another way, a tree height of h can have at most *2^h - 1* items, so if we have n items to store, we need at least *log(n)* height to store them. 
+
+In the later course CSC263, _Data Structures and Analysis_, you will explore more sophisticated insertion and deletion algorithms which _do_ ensure that the height is always logarithmic, thus guaranteeing the efficiency of these operations!
