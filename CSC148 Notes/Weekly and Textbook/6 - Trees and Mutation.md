@@ -640,8 +640,158 @@ Since the worst-case running time is a function, we can describe it using our Bi
 Similarly, in Big-Oh notation, we can say that the best case is *O(1)*, since `__contains__` immediately verifies that the root is equal to the item we're searching for.
 
 ## Tree Height and Size
-You may believe that array/linked lists, since they are O(n) for searching are equal to O(h) in the BST's, but this is where our choice of variables truly matters.
+You may believe that array/linked lists, since they are O(n) for searching, are equal to O(h) in the BST's, but this is where our choice of variables truly matters.
 We know that BST search is, in the worst case, proportional to the height of the BST; but remember the height of a BST can be much smaller than its size. 
-If we consider a BST with n items, its height can be as large as n (much like a list), or it can be as small as *log(n)*. Why? put it another way, a tree height of h can have at most *2^h - 1* items, so if we have n items to store, we need at least *log(n)* height to store them. 
+If we consider a BST with n items, its height can be as large as n (much like a list) or as small as *log(n)*. Why? To put it another way, a tree height of h can have at most *2^h - 1* items, so if we have n items to store, we need at least *log(n)* height to store them. 
 
-In the later course CSC263, _Data Structures and Analysis_, you will explore more sophisticated insertion and deletion algorithms which _do_ ensure that the height is always logarithmic, thus guaranteeing the efficiency of these operations!
+In the later course, CSC263, _Data Structures and Analysis_, you will explore more sophisticated insertion and deletion algorithms that ensure that the height is always logarithmic, thus guaranteeing the efficiency of these operations!
+
+### In Class Exercise - Preorder Searching
+```python
+class BinarySearchTree():
+	def preorder(self, act: Callable[[Tree], Any]) -> None:
+		""" Visit each node of the tree in preorder, and perform an            action on the nodes that are visted, using the function <act>
+		"""
+		act(self)
+		for subtree in self.subtrees:
+			subtree.preorder(act)
+	def postorder(self, act: Callable[[Tree], Any]) -> None:
+		for subtree in self.subtrees:
+			subtree.preorder(act)
+		act(self)
+```
+
+# 6.8 - Expression Trees
+We're going to wrap up our study of tree-based data structures. We will analyze one vibrant application of trees: *representing programs*. Picture a Python program with a few classes, functions, and dozens or hundreds of lines of code. As humans, we read and write code as *text*, and we take for granted the fact that we can ask the computer to run our code. 
+What happens when we "run" a program? Another program called the *Python Interpreter* is responsible for taking the file and running the program. Writing programs with direct text is hard, as strings are fundamentally *linear* structures, but programs like **Python** have a fundamentally *recursive* structure. 
+So the first step that the Python interpreter takes when given a file to run is to _parse_ the text from the file and create a new representation of the program, called an _Abstract Syntax Tree (AST)_.[1](https://mcs.utm.utoronto.ca/~148/course/notes/trees/expression_trees.html#fn1) The “Tree” part is significant: given the recursive nature of Python programs, it is natural that we’ll use a tree-based data structure to represent them!
+
+This week, we will explore the basics of modeling programs using tree-based data structures, trying to do some simple *expressions*.
+
+## The `Expr` Class
+In Python, an *expression* is a piece of code which is meant to be evaluated, returning the value of that expression. 
+
+Expressions are the basic building blocks of the language and are necessary for computing anything. But because of the immense variety of expression in Python, we can't use a single class for all of the expressions, but we can use inheritance to ensure that they follow the same fundamental interface. 
+Let's begin with an abstract class for expressions.
+```python
+class Expr:
+    """An abstract class representing a Python expression.
+    """
+    def evaluate(self) -> Any:
+        """Return the *value* of this expression.
+
+        The returned value should be the result of how this expression would be
+        evaluated by the Python interpreter.
+        """
+        raise NotImplementedError
+```
+Notice that we haven't specified any attributes for this class, as each type of expression will use different attributes. Let's begin with two expression types 
+
+### Num: Numeric Constants
+The simplest Python expression is a *literal* constant like `3` or `'hello'`. We'll start by representing numeric constants (`int`s and `float`s). This is relatively simple, with a single attribute representing the value of the constant.
+```python
+class Num(Expr):
+    """An numeric constant literal.
+
+    === Attributes ===
+    n: the value of the constant
+    """
+    n: Union[int, float]
+
+    def __init__(self, number: Union[int, float]) -> None:
+        """Initialize a new numeric constant."""
+        self.n = number
+
+    def evaluate(self) -> Any:
+        """Return the *value* of this expression.
+
+        The returned value should be the result of how this expression would be
+        evaluated by the Python interpreter.
+
+        >>> number = Num(10.5)
+        >>> number.evaluate()
+        10.5
+        """
+        return self.n  # Simply return the value itself!
+```
+You can think of constants as being the base case, or leaves, of an abstract syntax tree. Next, we'll look to combine these in larger expressions
+
+### `BinOp` Arithmetic Operations
+The obvious way to combine numbers is through standard arithmetic operations. In Python, an *arithmetic operation* is an expression that consists of three parts: a left and right subexpression (two operands) and the operator itself. We'll represent this as such.
+```python
+class BinOp(Expr):
+    """An arithmetic binary operation.
+
+    === Attributes ===
+    left: the left operand
+    op: the name of the operator
+    right: the right operand
+
+    === Representation Invariants ===
+    - self.op == '+' or self.op == '*'
+    """
+    left: Expr
+    op: str
+    right: Expr
+
+    def __init__(self, left: Expr, op: str, right: Expr) -> None:
+        """Initialize a new binary operation expression.
+
+        Precondition: <op> is the string '+' or '*'.
+        """
+        self.left = left
+        self.op = op
+        self.right = right
+```
+Note that `BinOp` class is a binary tree! Its "root" value is the operator name (stored as the attribute op), while its left and right "subtrees" represent the two *operand subexpressions*.
+For example, we could represent `3 + 5.5` like this.
+```python
+BinOp(Num(3), '+', Num(5.5))
+
+Prep10
+BinOp(Num(3), '+', Num(4))
+BinOp(BinOp(Num(3), '+', Num(4)), '*', Num(6))
+BinOp(Num(1.1), '+', BinOp(Num(2.2), '+', BinOp(Num(3.3), '+', Num(4.4))))
+
+```
+
+But of course, the types of `left` and `right` attributes aren't `Num`, they're `Expr` - so either of these can be `BinOp`s as well:
+```python
+# ((3 + 5.5) * (0.5 + (15.2 * -13.3)))
+BinOp(
+    BinOp(Num(3), '+', Num(5.5)),
+    '*',
+    BinOp(
+        Num(0.5),
+        '+',
+        BinOp(Num(15.2), '*', Num(-13.3)))
+```
+A computer program like the Python interpreter cannot understand this expression like humans do in their heads, and this is where the tree-like structure of `BinOp` shines. 
+To *evaluate* a binary operation, we first evaluate its left and right operands and then combine them using the specified arithmetic operator. 
+```python
+class BinOp:
+    def evaluate(self) -> Any:
+        """Return the *value* of this expression.
+        """
+        left_val = self.left.evaluate()
+        right_val = self.right.evaluate()
+
+        if self.op == '+':
+            return left_val + right_val
+        elif self.op == '*':
+            return left_val * right_val
+        else:
+            raise ValueError(f'Invalid operator {self.op}')
+```
+#### The Subtle Recursive Structure of Expression Trees
+Even though the above code appears simple, it uses recursion in a pretty subtle way. Notice that we're making pretty normal-looking recursive calls `self.left.evaluate()` and `self.right.evaluate()`, matching the tree structure of `BinOp1`... But where is the *base case(s)*?
+This is the most significant difference between expression trees and the tree-based classes we've studied. Because we're using multiple subclasses of `Expr`, there are *multiple* `evaluate` methods, one in each subclass. 
+Every time `self.left.evaluate` and `self.right.evaluate` are called, they could either refer to `BinOp.evaluate` _or_ `Num.evaluate`, depending on the types of `self.left` and `self.right`.
+
+In particular, notice that `Num.evaluate` doesn't make any subsequent calls to `evaluate` since it just returns the objects `n` attribute.
+So fundamentally, `evaluate` is still an example of structural recursion, just one that spans multiple `Expr` subclasses. 
+
+## Extra Abstract Syntax Tree Studies
+It turns out that there is a built-in Python library called `ast` (short for “abstract syntax tree”) that uses the same approach we’ve covered here, but, of course, it is comprehensive enough to cover the entire spectrum of the Python language. If you’re interested in reading more about this, feel free to check out some excellent documentation at [https://greentreesnakes.readthedocs.io](https://greentreesnakes.readthedocs.io).
+
+
