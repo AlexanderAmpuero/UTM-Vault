@@ -752,6 +752,7 @@ Prep10
 BinOp(Num(3), '+', Num(4))
 BinOp(BinOp(Num(3), '+', Num(4)), '*', Num(6))
 BinOp(Num(1.1), '+', BinOp(Num(2.2), '+', BinOp(Num(3.3), '+', Num(4.4))))
+1.1 + (2.2 + (3.3 + 4.4))
 
 ```
 

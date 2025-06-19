@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSC148 Notes/Weekly and Textbook/6 - Trees and Mutation.md",
+                "file": "CSC148 Notes/Weekly and Textbook/1 - The Python Memory Model.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "6 - Trees and Mutation"
+              "title": "1 - The Python Memory Model"
             }
           }
         ],
@@ -209,17 +209,20 @@
   },
   "active": "caee395f31cd9fe3",
   "lastOpenFiles": [
+    "CSC148 Notes/Weekly and Textbook/1 - The Python Memory Model.md",
     "CSC148 Notes/Weekly and Textbook/6 - Trees and Mutation.md",
-    "CSC148 Notes/Weekly and Textbook/7 - Binary and Efficiency Trees.md",
+    "CSC148 Notes/Weekly and Textbook/5 - Recursion.md",
+    "CSC148 Notes/Weekly and Textbook/4 - Linked Lists.md",
+    "CSC148 Notes/Weekly and Textbook/7 - Sorting and Efficiency.md",
+    "CSC148 Notes/Image Sources/Pasted image 20250320125721.png",
+    "CSC148 Notes/Image Sources/Pasted image 20250320124838.png",
+    "CSC148 Notes/Weekly and Textbook/Textbook.md",
     "Weekly Tasks.md",
+    "CSC148 Notes/Weekly and Textbook/7 - Binary and Efficiency Trees.md",
     "CSC148 Notes/Image Sources/Pasted image 20250227185841.png",
     "CSC148 Notes/Image Sources/Pasted image 20250227185713.png",
-    "CSC148 Notes/Weekly and Textbook/4 - Linked Lists.md",
     "CSC148 Notes/Weekly and Textbook/2 - Object-Oriented Programming.md",
     "CSC148 Notes/Weekly and Textbook/3 - Abstract Data Types.md",
-    "CSC148 Notes/Weekly and Textbook/1 - The Python Memory Model.md",
-    "CSC148 Notes/Weekly and Textbook/5 - Recursion.md",
-    "CSC148 Notes/Weekly and Textbook/Textbook.md",
     "CSC148 Notes/Image Sources/Pasted image 20250131223111.png",
     "CSC148 Notes/Image Sources/Pasted image 20250131222815.png",
     "CSC148 Notes/Image Sources/Pasted image 20250123163900.png",
@@ -237,8 +240,6 @@
     "CSC108 Notes/Week 6.md",
     "Web Development - Meta/Intro to HTML, CSS, and Javascript.md",
     "Pasted image 20250117204504.png",
-    "CSC148 Notes/Image Sources/Screenshot 2025-01-09 at 6.45.00 PM.png",
-    "CSC148 Notes/Image Sources/Screenshot 2025-01-05 at 9.55.06 PM.png",
     "CSC148 Notes/Untitled",
     "CSC148 Notes/Weekly and Textbook/Wee",
     "CSC148 Notes/Image Sources/CSC148_ CSC148 Lecture Notes.pdf",
@@ -252,7 +253,6 @@
     "CSC108 Notes/Week.md",
     "CSC108 Notes/Lists and Nested Loops.md",
     "MAT102 Notes/Proof Methods.md",
-    "Tutorial/Testing Grounds.md",
-    "README.md"
+    "Tutorial/Testing Grounds.md"
   ]
 }
