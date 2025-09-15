@@ -76,3 +76,30 @@ def aa(n):
 ```
 My answer was correct, but not as rigorous. The above is the more rigorous solution. 
 
+![[Pasted image 20250915145704.png]]
+```python
+# Pre(n): n in naturals and n >= 2
+# Return r s.t. Post(r, n): r = aa(n) (from the previous problem)
+def ab(n):
+	# let size(n) = n
+	# valid measure as n is in naturals by Pre
+	if type(n) is not int: raise TypeError()
+	elif n < 2: raise ValueError()
+	# add the smallest number of base cases here
+	if n < 4: return
+	
+	
+	else:
+		# (C): n >= 4, as n is in naturals and n >= 2 by Pre, and n > 4 by
+		# base cases
+		# Valid call: It is valid because n >= 4 => sqrt(n) >= 2
+		# => n > sqrt(n) >= 2 (by sqrt(x) < x)
+		# => n > floor(sqrt(n)) >= 2 (floor does nothing to number in naturals)
+		# Valid recursively: size(floor(sqrt(n))) = floor(sqrt(n)) < n = size(n)
+		# Thus since n in naturals, n is decreasing with a minimum value.
+		r = ab(floor(sqrt(n)))
+		return r ** 2 + 2 * r
+```
+Did too much - for valid call didn't need `n > sqrt(n)`, just needed to show Pre(n) is satisfied
+
+![[Pasted image 20250915153440.png]]
