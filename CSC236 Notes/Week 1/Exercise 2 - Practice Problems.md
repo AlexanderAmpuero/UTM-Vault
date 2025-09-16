@@ -86,7 +86,7 @@ def ab(n):
 	if type(n) is not int: raise TypeError()
 	elif n < 2: raise ValueError()
 	# add the smallest number of base cases here
-	if n < 4: return
+	if n < 4: return aa(n) # Corrected Ver.
 	
 	
 	else:
@@ -103,3 +103,79 @@ def ab(n):
 Did too much - for valid call didn't need `n > sqrt(n)`, just needed to show Pre(n) is satisfied
 
 ![[Pasted image 20250915153440.png]]
+```python
+# Pre(n): n in Naturals
+# Return r s.t. Post(r, n) r in Naturals and ...
+def s(n):
+	# let size(n) = n
+	# Valid measure because n in naturals by Pre
+	r = n
+	for k in range(n):
+		# (C) k in naturals and k < n
+		# Valid call: k is in the naturals (by C)
+		# Thus k is a valid call
+
+		# Valid recursively: valid because size(k) = k < n = size(n) (by C)
+		
+		r = r + s(k)
+	return r
+```
+
+Valid Recursively because the range function defines k as {k: 0 <= k <= n - 1} via for loop
+
+![[Pasted image 20250915154429.png]]
+
+![[Pasted image 20250915160303.png]]
+```python
+# Pre(n): n in naturals
+# Return b s.t. Post(b, n): b in B and b iff n is prime
+def prime(n): # ...implementation omitted...
+
+# Pre(n): n in naturals and n >= 2 and not prime(n)
+# Nondeterministically return d s.t. Post(d, n): d in naturals and
+# 2 <= d < n and d divides n. 
+def a_factor(n): # ...implementation omitted...
+
+# Pre(n): n in naturals and n >= 2
+# Return a0, ..., am s.t. Post(a0, ..., am, n): m in naturals and a0, ..., am
+# are prime and n = a0 x ... x am
+def factored(n):
+	# let size(n) = n
+	# valid measure as n in naturals by Pre
+	if prime(n): return (n,)
+	# (C) n > 3 and n is not prime
+	
+	# Valid Call: By Pre of a_factor(), 2 <= d < n and d divides n,
+	# thus by definition, n is not prime, and n != 3 (as if d = 2, then 2 !| 3)
+	# Thus (C) is satisfied as needed.
+	
+	
+	# Valid Recursively: 
+	d = a_factor(n)
+	as = factored(d)
+	bs = factored(n // d)
+	return as + bs
+```
+Find `factored(12)`
+`factored(12)` = `factored(a_factor(12))` + `factored(n // a_factor(12))` = (3, 2, 2)
+		`factored(a_factor(12))` = (3,)
+				`a_factor(12)` = 3
+		`factored(12 // a_factor(12))` = `factored(4)`
+				`a_factor(12)` = 3
+				`factored(4)` = `factored(a_factor(4))` + `factored(n // a_factor(4))` = (2, 2)
+						`factored(a_factor(4))` = (2,)
+								`a_factor(4)` = 2
+						`factored(n // a_factor(4))` = (2,)
+								`a_factor(4)` = 2
+or
+`factored(12)` = `factored(a_factor(12))` + `factored(n // a_factor(12))` = (2, 3, 2)
+		`factored(a_factor(12))` = (2,)
+				`a_factor(12)` = 2
+		`factored(12 // a_factor(12))` = `factored(6)` = (3, 2)
+				`a_factor(12)` = 2
+				`factored(6)` = `factored(a_factor(6))` + `factored(n // a_factor(12)` = (3, 2)
+						`factored(a_factor(6))` = (3,)
+								`a_factor(6)` = 3
+						`factored(6 // a_factor(6))` = (2,)
+								`a_factor(6)` = 3
+			
