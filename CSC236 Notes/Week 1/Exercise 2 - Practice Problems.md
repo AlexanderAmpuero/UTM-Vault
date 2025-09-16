@@ -145,12 +145,14 @@ def factored(n):
 	if prime(n): return (n,)
 	# (C) n > 3 and n is not prime
 	
-	# Valid Call: By Pre of a_factor(), 2 <= d < n and d divides n,
+	# Valid Call: By Post of a_factor(), 2 <= d < n and d divides n,
 	# thus by definition, n is not prime, and n != 3 (as if d = 2, then 2 !| 3)
 	# Thus (C) is satisfied as needed.
+	 
 	
-	
-	# Valid Recursively: 
+	# Valid Recursively: By Post of a_factor(), 2 <= d < n. Furthermore,
+	# size(d) = d < n = size(n) by Post of a_factor(), and 
+	# size(n // d) = n // d < n = size(n) (because d | n )
 	d = a_factor(n)
 	as = factored(d)
 	bs = factored(n // d)
