@@ -148,11 +148,10 @@ def factored(n):
 	# Valid Call: By Post of a_factor(), 2 <= d < n and d divides n,
 	# thus by definition, n is not prime, and n != 3 (as if d = 2, then 2 !| 3)
 	# Thus (C) is satisfied as needed.
-	 
 	
 	# Valid Recursively: By Post of a_factor(), 2 <= d < n. Furthermore,
 	# size(d) = d < n = size(n) by Post of a_factor(), and 
-	# size(n // d) = n // d < n = size(n) (because d | n )
+	# size(n // d) = (n // d) < n = size(n) (because d | n)
 	d = a_factor(n)
 	as = factored(d)
 	bs = factored(n // d)
@@ -180,4 +179,93 @@ or
 								`a_factor(6)` = 3
 						`factored(6 // a_factor(6))` = (2,)
 								`a_factor(6)` = 3
-			
+
+Did too much for the call tree, could've simplified it and didn't need to show `a_factor()` calls. 
+Need to show valid calls and recursion for each function call in the recursive step.
+That is, `a_factor()` and `factored()`
+
+![[Pasted image 20250915232429.png]]
+```python
+# Pre(n, m): n, m in naturals and n < 2**m
+# Return b s.t. Post(b, n, m): b is atuple of length m, and n *above*
+def r(n, m):
+	# size(n, m) = m
+	# valid measure as n, m in naturals by Pre
+	
+	if m == 0: return ()
+	# (C) m is in the naturals and m >= 1 (by Pre)
+	
+	# Valid call: By (C), we know that m - 1 >= 0, 
+	# thus m - 1 >= 0 => (m - 1) in naturals. Furthermore, 
+	# n < 2**m => n/2 < 2**m * 1/2 => floor(n/2) < 2**(m - 1). 
+	# Thus since m1 = m0 - 1, the precondition is satisfied
+	
+	# Valid recursively: size(n // 2, m - 1) = m - 1 < m = size(n, m) by (C)
+	return (n % 2,) + r(n // 2, m - 1)
+```
+Proof: We will use induction to prove size(n, m) = m
+Base Case: let m = 0. By Pre, we know n < 2^m => n < 2^0 => n < 1, thus n = 0.
+r(0, 0) = (). Thus size(n, m) = m as needed
+
+Recursive Hypothesis: size(n // 2, m - 1) = m - 1 for some m, n in naturals s.t. m > 0
+
+Recursive Step: n // 2 < 2^(m - 1)
+=> n // 2 <= n / 2 < 2^(m - 1)
+=> n < 2 * 2^(m - 1)
+=> n < 2^m 
+=> Thus size(n // 2, m - 1) = m - 1 => size(n, m) = m
+Hence, by the principle of mathematical induction, size(n, m) = m for all m in Precondition
+Note: measure decrease proven in the above code
+
+![[Pasted image 20250916002901.png]]
+```python
+# Pre(a, b): a, b in naturals and (a > 0 or b > 0)
+# Nondeterministically return (c, d) s.t. Post(c, d, a, b): c, d in naturals and
+# either c = a and d < b, c < a and d = b
+def adversary(a, b): # ... implementation omitted...
+
+# Pre(m, n): m, n in naturals and m != n
+# return b s.t. Post(b, m, n): b in B and (...omitted)
+def strategy(m, n):
+	# size(m, n) = m x n or size(m, n) = max(m, n) are both valid measures 
+	# valid measure as m x n and max(m, n) is in naturals by Pre
+	if m == 0 or n == 0: return True
+	else:
+		# (C) m >= 1 and n >= 1 and m != n (by Pre)
+		
+		(c, d) = adversary(min(m, n), min(m, n))
+		# Valid Call: Let x = min(m, n), s.t. 
+		# adversary(min(m, n), min(m, n)) = adversary(x, x)
+		# We know x > 0 by (C) and x in naturals by Pre. Thus Pre of adversary
+		# Is satisfied. 
+		# by adversary(x, x) Post, 
+		# we know if a = b, then either (c = a and d < b) or (c < a and d = b)
+		# Thus c != d, and c, d in naturals by Post of adversary.
+		# Thus Pre strategy is satisfied as needed
+		
+		# NOTE: proofs for size below.
+		# Valid Recursively: 
+		# size(c, d) = c x d < m x n = size(m, n)
+			# Because adversary Post = (c, d, min(m, n), min(m, n)) where either
+			# c = min(m, n) and d = b or c < min(m, n) and d = b.
+			# Thus size(c, d) =c x d < min(m, n) * min(m, n) < m x n = size(m, n)
+		# size(c, d) = max(c, d) < max(m, n) = size(m, n)
+			# Because adversary post = (c, d, min(m, n), min(m, n)) implying
+			# c = min(m, n) and d < min(m, n) or d = min(m, n) and c < min(m, n)
+			# either event results in max(c, d) = min(m, n) < max(m, n)
+			# since m != n by Pre. 
+		return strategy(c, d)
+```
+
+a) size(m, n) = m
+Let (m, n) = (2, 5)
+strategy(m, n) = 
+	adversary(2, 2)
+	strategy(2, 1)
+Thus size(m, n) != m, as the size must decrease on every call, but size remains to be 2
+b) size(m, n) = m - n
+Not valid as let (m, n) = (2, 3) => size(m, n) = -1 which is not a valid measure
+
+Both size(m, n) = max(m, n) and size(m, n) = m x n are valid - Shown above
+
+
