@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSC236 Notes/Week 2/Exercise 4 - Practice Problems.md",
+                "file": "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Exercise 4 - Practice Problems"
+              "title": "Week 2 - Classes and Objects"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CSC148 Notes/Weekly and Textbook/6 - Trees and Mutation.md",
+                "file": "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 6 - Trees and Mutation"
+              "title": "Backlinks for Week 2 - Classes and Objects"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CSC108 Notes/Week 9 - Lazy Literature and Testing.md",
+                "file": "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Week 9 - Lazy Literature and Testing"
+              "title": "Outgoing links from Week 2 - Classes and Objects"
             }
           },
           {
@@ -128,7 +128,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Tags"
@@ -140,10 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CSC108 Notes/Week 9 - Lazy Literature and Testing.md"
+                "file": "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Week 9 - Lazy Literature and Testing"
+              "title": "Outline of Week 2 - Classes and Objects"
             }
           }
         ]
@@ -167,9 +172,19 @@
   },
   "active": "fa8c07c4e9a93b62",
   "lastOpenFiles": [
+    "CSC207 Notes/Images/Pasted image 20251022015436.png",
+    "CSC207 Notes/Images/Pasted image 20251022013846.png",
+    "CSC207 Notes/Weekly and Textbook/Week 1 - Java Basics.md",
+    "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
+    "CSC207 Notes/Images/Pasted image 20251022000726.png",
+    "CSC207 Notes/Images/Pasted image 20251021182318.png",
+    "Weekly Tasks.md",
+    "Untitled.md",
+    "CSC207 Notes/Images",
+    "CSC207 Notes/Images/Pasted image 20251021154733.png",
+    "CSC236 Notes/Week 2/Exercise 4 - Practice Problems.md",
     "CSC236 Notes/Images/Pasted image 20250923004616.png",
     "CSC236 Notes/Week 2/Exercise 3 - Practice Problems.md",
-    "CSC236 Notes/Week 2/Exercise 4 - Practice Problems.md",
     "CSC236 Notes/Week 2",
     "CSC236 Notes/Week 1/Exercise 2 - Practice Problems.md",
     "CSC236 Notes/Images/Pasted image 20250916002901.png",
@@ -177,14 +192,8 @@
     "Pasted image 20250916102732.png",
     "CSC236 Notes/Images/Pasted image 20250915232429.png",
     "CSC236 Notes/Images/Pasted image 20250911223930.png",
-    "CSC236 Notes/Images/Pasted image 20250915160303.png",
-    "CSC236 Notes/Images/Pasted image 20250915154429.png",
-    "CSC236 Notes/Images/Pasted image 20250915153440.png",
-    "CSC236 Notes/Images/Pasted image 20250915145704.png",
-    "CSC207 Notes/Weekly and Textbook/Week 1.md",
     "Clippings/What Should I Know . . . MAT232H5 All Sections 20259Calculus of Several Variables.md",
     "Clippings",
-    "CSC236 Notes/Images/Pasted image 20250911225358.png",
     "CSC236 Notes/Images",
     "CSC236 Notes/Week 1",
     "CSC236 Notes",
@@ -197,7 +206,6 @@
     "CSC148 Notes/Weekly and Textbook/4 - Linked Lists.md",
     "CSC148 Notes/Weekly and Textbook/7 - Sorting and Efficiency.md",
     "CSC148 Notes/Weekly and Textbook/Textbook.md",
-    "Weekly Tasks.md",
     "CSC148 Notes/Weekly and Textbook/7 - Binary and Efficiency Trees.md",
     "CSC148 Notes/Weekly and Textbook/2 - Object-Oriented Programming.md",
     "CSC148 Notes/Weekly and Textbook/3 - Abstract Data Types.md",
@@ -208,10 +216,7 @@
     "CSC108 Notes/Week 11 - Test Review TT2.md",
     "CSC108 Notes/Week 11 - Sorting (Search, Insertion, Selection).md",
     "CSC108 Notes/Week 9-10 - Lazy Literature and Testing.md",
-    "CSC108 Notes/Week 8 - CSV Files and Dictionaries.md",
-    "CSC108 Notes/Week 7.md",
     "CSC148 Notes/Untitled",
-    "CSC148 Notes/Weekly and Textbook/Wee",
-    "CSC148 Notes/Image Sources/CSC148_ CSC148 Lecture Notes.pdf"
+    "CSC148 Notes/Weekly and Textbook/Wee"
   ]
 }
