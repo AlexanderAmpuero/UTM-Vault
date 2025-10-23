@@ -253,3 +253,4 @@ If other programmers use your class, you want to ensure that errors from misuse 
 
 - Use the most restrictive access level that makes sense for a particular member. Use `private` unless you have a good reason not to.
 - Avoid `public` fields except for constants. (Many of the examples in the tutorial use public fields. This may help to illustrate some points concisely, but is not recommended for production code.) Public fields tend to link you to a particular implementation and limit your flexibility in changing your code.
+- Rule of thumb: instance variables are private. Some methods are public.

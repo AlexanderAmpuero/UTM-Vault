@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
+                "file": "CSC207 Notes/Weekly and Textbook/Week 4 - OOP, Interfaces, and JavaFX.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Week 2 - Classes and Objects"
+              "title": "Week 4 - OOP, Interfaces, and JavaFX"
             }
           }
         ]
@@ -170,12 +170,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fa8c07c4e9a93b62",
+  "active": "5bb0f81079c11940",
   "lastOpenFiles": [
+    "CSC207 Notes/Weekly and Textbook/Week 3 - Inheritance, Interface, and UML Diagrams.md",
+    "CSC207 Notes/Weekly and Textbook/Week 4 - OOP, Interfaces, and JavaFX.md",
+    "Pasted image 20251023020415.png",
+    "CSC207 Notes/Images/Pasted image 20251023015352.png",
+    "CSC207 Notes/Images/Pasted image 20251023014803.png",
+    "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
     "CSC207 Notes/Images/Pasted image 20251022015436.png",
     "CSC207 Notes/Images/Pasted image 20251022013846.png",
     "CSC207 Notes/Weekly and Textbook/Week 1 - Java Basics.md",
-    "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
     "CSC207 Notes/Images/Pasted image 20251022000726.png",
     "CSC207 Notes/Images/Pasted image 20251021182318.png",
     "Weekly Tasks.md",
@@ -188,10 +193,6 @@
     "CSC236 Notes/Week 2",
     "CSC236 Notes/Week 1/Exercise 2 - Practice Problems.md",
     "CSC236 Notes/Images/Pasted image 20250916002901.png",
-    "Pasted image 20250916102730.png",
-    "Pasted image 20250916102732.png",
-    "CSC236 Notes/Images/Pasted image 20250915232429.png",
-    "CSC236 Notes/Images/Pasted image 20250911223930.png",
     "Clippings/What Should I Know . . . MAT232H5 All Sections 20259Calculus of Several Variables.md",
     "Clippings",
     "CSC236 Notes/Images",
@@ -215,7 +216,6 @@
     "CSC108 Notes/Week 12 - Bubble Sort and Complexity.md",
     "CSC108 Notes/Week 11 - Test Review TT2.md",
     "CSC108 Notes/Week 11 - Sorting (Search, Insertion, Selection).md",
-    "CSC108 Notes/Week 9-10 - Lazy Literature and Testing.md",
     "CSC148 Notes/Untitled",
     "CSC148 Notes/Weekly and Textbook/Wee"
   ]
