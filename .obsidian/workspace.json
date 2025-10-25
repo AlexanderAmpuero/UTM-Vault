@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSC207 Notes/Weekly and Textbook/Week 4 - OOP, Interfaces, and JavaFX.md",
+                "file": "CSC207 Notes/Weekly and Textbook/Week 1 - Java Basics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Week 4 - OOP, Interfaces, and JavaFX"
+              "title": "Week 1 - Java Basics"
             }
           }
         ]
@@ -172,27 +172,29 @@
   },
   "active": "5bb0f81079c11940",
   "lastOpenFiles": [
-    "CSC207 Notes/Weekly and Textbook/Week 3 - Inheritance, Interface, and UML Diagrams.md",
-    "CSC207 Notes/Weekly and Textbook/Week 4 - OOP, Interfaces, and JavaFX.md",
-    "Pasted image 20251023020415.png",
+    "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
+    "CSC207 Notes/Weekly and Textbook/Week 3 - Inheritance, JUnit, Interface, and UML Diagrams.md",
+    "CSC207 Notes/Weekly and Textbook/Week 4 - OOP and Interfaces.md",
+    "CSC207 Notes/Weekly and Textbook/Week 5 - JavaFX.md",
+    "CSC207 Notes/Weekly and Textbook/Week 6 - SCRUM, MVC, and Design Patterns.md",
+    "CSC207 Notes/Weekly and Textbook/Week 1 - Java Basics.md",
+    "CSC207 Notes/Images/Pasted image 20251023223544.png",
+    "CSC207 Notes/Images/Pasted image 20251023222932.png",
+    "CSC207 Notes/Images/Pasted image 20251023214055.png",
+    "CSC207 Notes/Images/Pasted image 20251023164642.png",
+    "CSC207 Notes/Images/Pasted image 20251023163422.png",
+    "CSC207 Notes/Images/Pasted image 20251023163407.png",
+    "CSC207 Notes/Images/Pasted image 20251023163001.png",
+    "CSC207 Notes/Images/Pasted image 20251023020415.png",
     "CSC207 Notes/Images/Pasted image 20251023015352.png",
     "CSC207 Notes/Images/Pasted image 20251023014803.png",
-    "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
-    "CSC207 Notes/Images/Pasted image 20251022015436.png",
-    "CSC207 Notes/Images/Pasted image 20251022013846.png",
-    "CSC207 Notes/Weekly and Textbook/Week 1 - Java Basics.md",
-    "CSC207 Notes/Images/Pasted image 20251022000726.png",
-    "CSC207 Notes/Images/Pasted image 20251021182318.png",
     "Weekly Tasks.md",
     "Untitled.md",
     "CSC207 Notes/Images",
-    "CSC207 Notes/Images/Pasted image 20251021154733.png",
     "CSC236 Notes/Week 2/Exercise 4 - Practice Problems.md",
-    "CSC236 Notes/Images/Pasted image 20250923004616.png",
     "CSC236 Notes/Week 2/Exercise 3 - Practice Problems.md",
     "CSC236 Notes/Week 2",
     "CSC236 Notes/Week 1/Exercise 2 - Practice Problems.md",
-    "CSC236 Notes/Images/Pasted image 20250916002901.png",
     "Clippings/What Should I Know . . . MAT232H5 All Sections 20259Calculus of Several Variables.md",
     "Clippings",
     "CSC236 Notes/Images",
@@ -213,9 +215,6 @@
     "CSC148 Notes/Course Syllabus.md",
     "CSC148 Notes/Weekly Prep.md",
     "CSC108 Notes/Week 13 - OOP Programming.md",
-    "CSC108 Notes/Week 12 - Bubble Sort and Complexity.md",
-    "CSC108 Notes/Week 11 - Test Review TT2.md",
-    "CSC108 Notes/Week 11 - Sorting (Search, Insertion, Selection).md",
     "CSC148 Notes/Untitled",
     "CSC148 Notes/Weekly and Textbook/Wee"
   ]

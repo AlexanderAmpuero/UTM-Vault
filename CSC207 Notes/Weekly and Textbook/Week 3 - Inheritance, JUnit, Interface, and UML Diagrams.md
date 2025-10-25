@@ -126,6 +126,7 @@ Regular class: A
 **Static**: ___ - (underline)
 **Arrows**:
 ![[Pasted image 20251023015352.png]]
+![[Pasted image 20251023214055.png]]
 An *association* is strong, it has classes interact with one another, but not alter anything. For example, `ClassA` stores a reference to `ClassB` as an attribute. Like this:
 ```java
 public class ClassA {

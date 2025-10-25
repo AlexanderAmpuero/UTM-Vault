@@ -28,3 +28,22 @@ For example, a Smart TV can be used to implement the following interfaces:
 ## Interface Example
 Lets construct an *interface* called `Sortable`, which contains the key ideas of Sorting, comparing, and swapping. (`compare` and `swap`)
 We've chosen the attributes of comparing and swapping, because all sortable things have these ideas in common. (Numbers, people, words, etc.)
+
+## Interface v. Abstract Class v. Class
+### Interface
+- Not a class
+- All methods are public and static
+- None of the methods are implemented
+### Abstract Class
+- Is a class
+- Can have attributes and methods without any access modifiers. (cannot be changed)
+- Not all methods are implemented (some can be though)
+### Sub-Class
+- Child of an abstract class
+- Can be instantiated to make a new object.
+- **Must** implement all methods from abstract class
+- can include additional methods/attributes
+
+## Dynamic Dispatch
+Let B extend of A, and C extend B such that:
+`B var1 = new C()` which means you are running C() wherever possible, but you are limited to the methods and features of B.
