@@ -8,6 +8,12 @@ The **Waterfall** methodology follows a top down life cycle which goes as follow
 - Maintain it
 This is a linear progression, which mimics a waterfall, flowing from one step to another.
 The **SCRUM** methodology is the workflow this course will follow. 
+
+$$
+\begin{align}
+\text{testing LATEX}
+\end{align}
+$$
 # SCRUM
 No, it is not an acronym, it is a word derived from various sports (like football), where a team comes together, plans, executes a play, and pauses, coming together again to prepare for the next push. These pushes continue until the team reaches the goal, and they are called *Sprints* in the development cycle. 
 For a software dev, the ball is the product that's being developed, and the target is the rollout to the market. 
@@ -168,7 +174,7 @@ public class App extends Application {
 		HBox root = new HBox(view.balloon, view.inflate);
 		
 		// SCENE
-		Scene(root, 200, 200);
+		Scene scene = new Scene(root, 200, 200);
 		Stage.setScene(scene);
 		Scene.show();
 	}
@@ -180,3 +186,5 @@ public class App extends Application {
 In the context of JavaFX, we consider `Eventhandlers` and Buttons to be GUI parts. 
 
 As practice for Design Patterns, Benedetti has providing a badly structured clock app, and I must restructure it to be MVC-compliant. Can't wait!
+
+#### Watch out for testing and test avg was 70 ish
