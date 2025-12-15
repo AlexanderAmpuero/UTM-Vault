@@ -62,6 +62,14 @@ Design patterns are a notion of structuring/arranging code to be flexible and mo
 Take the above example: Let's say we have the left GUI already built, and we want to turn it into the right GUI. Will it be easy to do? Or will we have to overhaul the entire codebase.
 The answer is simple, if the code is organized and designed well, then it should be simple. Otherwise we're in for a long, sad, coding sesh.
 
+# Observer/Observable
+## Reasons
+O Wants to react to changes in state of object M without having to burden M with what O needs from M to correctly react.
+Allow many such O's to independently subscribe to M for an update when M changes.
+## Logic
+The *observable* knows nothing about the *Observer*, it just understands that the *Observer* is watching it's `update()` method.
+![[Pasted image 20251215003120.png]]
+Note: `ConreteObservableA` and `ConreteObservableB` are mislabeled, and should be *Observers*
 # MVC - Model, View and Controller
 **Model** - The Data & Logic centre
 - Handles the data and business logic (database operations, rules, and computations)
@@ -73,7 +81,7 @@ The answer is simple, if the code is organized and designed well, then it should
 - Interprets the user actions, updating the model and selecting which view to display
 - Connect the users actions between the model and view
 - Interprets what the user wants and tells the model and view to update accordingly.
-
+![[Pasted image 20251214222601.png]]
 ## Example - Balloon
 Lets create a basic MVC for a balloon:
 First, we create the model, that is, the balloon.
