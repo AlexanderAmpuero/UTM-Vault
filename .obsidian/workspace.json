@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSC207 Notes/Weekly and Textbook/Week 11 - IEEE and Floating Point.md",
+                "file": "CSC207 Notes/Weekly and Textbook/Week 10 - Regular Expressions, FSMs, and JavaIO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Week 11 - IEEE and Floating Point"
+              "title": "Week 10 - Regular Expressions, FSMs, and JavaIO"
             }
           },
           {
@@ -184,8 +184,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fa8c07c4e9a93b62",
+  "active": "5bb0f81079c11940",
   "lastOpenFiles": [
+    "CSC207 Notes/Weekly and Textbook/Week 11 - IEEE and Floating Point.md",
     "CSC207 Notes/Images/Pasted image 20251217011647.png",
     "CSC207 Notes/Weekly and Textbook/Week 10 - Regular Expressions, FSMs, and JavaIO.md",
     "CSC207 Notes/Weekly and Textbook/Week 9 - Visitor, Builder and SOLID Principles.md",
@@ -198,11 +199,9 @@
     "CSC207 Notes/Images/Pasted image 20251216191809.png",
     "CSC207 Notes/Images/Pasted image 20251216185855.png",
     "CSC207 Notes/Weekly and Textbook/Week 7 - Singleton, Interator, and Factory.md",
-    "CSC207 Notes/Weekly and Textbook/Week 11 - IEEE and Floating Point.md",
     "CSC207 Notes/Weekly and Textbook/Week 6 - SCRUM, MVC, and Design Patterns.md",
     "CSC207 Notes/Images/Pasted image 20251215005852.png",
     "CSC207 Notes/Images/Pasted image 20251215003120.png",
-    "CSC207 Notes/Images/Pasted image 20251215002319.png",
     "CSC207 Notes/Weekly and Textbook/Week 12 - Exam Review.md",
     "CSC207 Notes/Weekly and Textbook/Week 5 - JavaFX.md",
     "CSC207 Notes/Weekly and Textbook/Week 3 - Inheritance, JUnit, Interface, and UML Diagrams.md",

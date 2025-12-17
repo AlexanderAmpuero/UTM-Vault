@@ -20,6 +20,26 @@ For example:
 (\d\d)\1 = 1212 - Means the the first group of 2 digits must match the second (occur twice)
 (\w*)\s\1  = asdf asdf - Means any word of 0 or more length must occur twice, separated by white space. 
 
+When it comes to capturing groups, each group can be accessed within code. Note that group 0 is always the entire matched regex. 
+### Ex. Money
+```java
+public class RegexExample { 
+	public static void main(String[] args) { 
+		String input = "the price is $345.67"; 
+		// The parentheses define Group 1 
+		String regex = "\\$([0-9]+(?:\\.[0-9]{2})?)"; 
+		Pattern pattern = Pattern.compile(regex); 
+		Matcher matcher = pattern.matcher(input); 
+		if (matcher.find()) { 
+			// matcher.group(0) is the full match: "$345.67" 
+			// matcher.group(1) is the first captured group: "345.67" 
+			String extractedNumber = matcher.group(1); 
+			System.out.println("Full match: " + matcher.group(0)); 
+			System.out.println("Extracted number (Group 1): " + extractedNumber); 
+		} 
+	} 
+}
+```
 # JavaIO
 ## Streams
 ### Byte Streams
