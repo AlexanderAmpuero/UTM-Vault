@@ -140,3 +140,33 @@ Note: float     = 32 bits (pattern above)
 			sign: 1 bit
 			exp: 11 bits (with an offset of 1023, instead of 127)
 			mantissa: 52 bits (instead of 32)
+
+### EX 2 — 0.1 in Computer Memory
+i) Convert base 10 number to binary. 
+0.1 = 
+0.1 x 2 = 0.2 (0 bit)
+0.2 x 2 = 0.4 (0 bit)
+0.4 x 2 = 0.8 (0 bit)
+0.8 x 2 = 1.6 (1 bit)
+0.6 x 2 = 1.2 (1 bit)
+0.2 x 2 = 0.4 (0 bit)
+Thus we have 000110011 repeating. 
+ii) Normalize binary number 000110011 = 1.100110011... x 2^-4
+iii) Binary (127 + exp) 127 + -4 = 123 = 
+123 / 2 = 61 R1
+61 / 2 = 30 R1
+30 / 2 = 15 R0
+15 / 2 = 7 R1
+7 / 2 = 3 R1
+3 / 2 = 1 R1
+1 / 2 = 0 R1
+0 / 2 = 0 R0
+Thus 123 = 01111011
+iv) Map out the IEEE 754 components
+	sign bit: 0
+	exp bit: 01111011
+	Mantissa: 10011001100110011001101 (last bit rounds up as repetition continues)
+
+Therefore 0.1 in binary is 00111101110011001100110011001101
+	
+

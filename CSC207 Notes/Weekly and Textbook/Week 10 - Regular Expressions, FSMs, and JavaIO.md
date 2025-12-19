@@ -61,7 +61,7 @@ Byte Streams: `BufferedInputStream`, `BufferedOutputStream`
 ### Scanners
 For dealing with formatting input text from file or console
 ## Console I/O
-Reading every character (very inefficent)
+Reading every character (very inefficient)
 ```java
 public static void consoleIO() {
 	// System class System.in, System.out
@@ -111,8 +111,8 @@ public static void consoleIO() {
 The `BufferedReader lineInput` line is very important. `InputStreamReader(System.in)` converts  bytes into characters. and the instantiation to BufferedReader makes it buffer, allowing for whole lines to be read. 
 Keyboard → bytes → characters → lines
 
-## File I/O
-### Reading
+# File I/O
+## Reading
 InputStream — Abstract class is the superclass of all classes representing an input stream of bytes.
 Reader — Abstract class for reading character streams
 BufferedReader — Reading line oriented data 
@@ -145,7 +145,7 @@ try {
 } 
 // read words and print them all out
 ```
-### Writing
+## Writing
 ```java
 public static void fileWriting() {
 	// https://www.journaldev.com/878/java-write-to-file
