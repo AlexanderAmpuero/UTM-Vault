@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSC207 Notes/Weekly and Textbook/Week 7 - Singleton, Iterator, and Factory.md",
+                "file": "CSC209 Notes/Weekly and Textbook/Week 1 - Introduction to UNIX.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Week 7 - Singleton, Iterator, and Factory"
+              "title": "Week 1 - Introduction to UNIX"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -184,8 +185,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5bb0f81079c11940",
+  "active": "fa8c07c4e9a93b62",
   "lastOpenFiles": [
+    "CSC209 Notes/Images/Pasted image 20260108210409.png",
+    "CSC209 Notes/Images/Pasted image 20260108204158.png",
+    "CSC209 Notes/Images/Pasted image 20260108203930.png",
+    "CSC209 Notes/Week 1 - Introduction to UNIX/Untitled.md",
+    "CSC209 Notes/Weekly and Textbook/Week 1 - Introduction to UNIX.md",
+    "CSC209 Notes/Weekly and Textbook",
+    "CSC209 Notes/Images",
+    "CSC207 Notes/Weekly and Textbook/Week 1 - Java Basics.md",
+    "CSC209 Notes/Week 1 - Introduction to UNIX",
+    "CSC209 Notes",
     "CSC207 Notes/Weekly and Textbook/Week 6 - SCRUM, MVC, and Design Patterns.md",
     "CSC207 Notes/Weekly and Textbook/Week 9 - Visitor, Builder and SOLID Principles.md",
     "CSC207 Notes/Weekly and Textbook/Week 8 - Strategy, Command, and Composite.md",
@@ -195,7 +206,6 @@
     "CSC207 Notes/Weekly and Textbook/Week 11 - IEEE and Floating Point.md",
     "CSC207 Notes/Weekly and Textbook/Week 3 - Inheritance, JUnit, Interface, and UML Diagrams.md",
     "CSC207 Notes/Weekly and Textbook/Week 4 - OOP and Interfaces.md",
-    "CSC207 Notes/Weekly and Textbook/Week 1 - Java Basics.md",
     "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
     "CSC207 Notes/Weekly and Textbook/Week 12 - Exam Review.md",
     "CSC207 Notes/Images/Pasted image 20251217011647.png",
@@ -206,10 +216,7 @@
     "CSC207 Notes/Images/Pasted image 20251216192444.png",
     "CSC207 Notes/Images/Pasted image 20251216191809.png",
     "CSC207 Notes/Images/Pasted image 20251216185855.png",
-    "CSC207 Notes/Images/Pasted image 20251215005852.png",
-    "CSC207 Notes/Images/Pasted image 20251215003120.png",
     "Weekly Tasks.md",
-    "Untitled.md",
     "CSC207 Notes/Images",
     "CSC236 Notes/Week 2/Exercise 4 - Practice Problems.md",
     "CSC236 Notes/Week 2/Exercise 3 - Practice Problems.md",
@@ -220,16 +227,11 @@
     "CSC236 Notes/Images",
     "CSC236 Notes/Week 1",
     "CSC236 Notes",
-    "CSC207 Notes/Weekly and Textbook",
-    "CSC207 Notes",
     "Web Development - Meta/Intro to HTML, CSS, and Javascript.md",
     "CSC148 Notes/Weekly and Textbook/1 - The Python Memory Model.md",
     "CSC148 Notes/Weekly and Textbook/6 - Trees and Mutation.md",
     "CSC148 Notes/Weekly and Textbook/5 - Recursion.md",
     "CSC148 Notes/Weekly and Textbook/4 - Linked Lists.md",
-    "CSC148 Notes/Weekly and Textbook/7 - Sorting and Efficiency.md",
-    "CSC148 Notes/Weekly and Textbook/Textbook.md",
-    "CSC148 Notes/Untitled",
-    "CSC148 Notes/Weekly and Textbook/Wee"
+    "CSC148 Notes/Weekly and Textbook/7 - Sorting and Efficiency.md"
   ]
 }
