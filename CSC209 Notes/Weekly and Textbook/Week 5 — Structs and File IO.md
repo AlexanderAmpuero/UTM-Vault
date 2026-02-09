@@ -158,3 +158,58 @@ Function pointers enable complex architectural patterns, such as command-line se
 |**`typedef` Aliasing**|Using `typedef` to create an alias for a function pointer type (e.g., `SortFunc_t`) significantly cleans up code and makes declarations easier to read.|
 
 > **Connection to Objects**: Storing data and the functions that handle that data within the same `struct` is a precursor to the concept of an "object" found in object-oriented programming.
+
+# PCRS Recap
+## Stream and Files
+A struct is a collection of members:
+```C
+struct student {
+	char name[21];
+	int student_num;
+};
+```
+- Can be dynamically or statically allocated
+- Can declare arrays of structs, pointers to structs. . .
+- What is sizeof(struct student)?
+	- I think size is 16, because its an empty struct w/ uninitialized features
+- This is a “trick” question
+
+- printf and scanf operate on stdout and stdin, respectively
+- stdin, stdout, and stderr are the standard I/O streams
+- But streams can be associated with an open file
+- Use fopen and fclose to open and close files
+## Stream I/O
+Functions exist to read/write on any stream
+- Characters/Strings: `fprintf`, `fscanf`, and `fgets`
+- Binary Data: `fread`, `fwrite`
+
+Use `fseek` and `rewind` to *reposition* a stream
+Use `fflush` to *flush* a stream
+
+The man pages for all of these functions are very detailed and informative
+
+# Testing Your Understanding
+## 1.
+Assume you're reading a 2 MB file w/ this code in a loop
+After the call completes for the first iteration, how many bytes were read?
+`fread(buf, 11, 19, fp)`
+Possible answers: 11, 19, 209.
+I believe the answer is 11.
+This is wrong, answer is 209.
+`fread(void *ptr, size_t size, size_t nitems, FILE *stream`
+Reads `nitems` objects, each of which is `size` bytes long: $11 * 19 = 209$
+## 2. 
+```C
+int r;
+while ((r = fread(buf, 2, 4, fp_in)))
+	fwrite(buf, 2, r, fp_out);
+```
+Does this copy the contents from the file pointed by `fp_in` to `fp_out`? (yes/no)
+No, because files w/ odd byte counts will not copy correctly (since we read 8 bytes per read, and do it in sizes of 2, potentially leaving 1 behind if odd)
+## 3.
+```C
+int r;
+while ((r = fread(buf, 1, 4, fp_in)))
+	fwrite(buf, 1, r, fp_out);
+```
+Yes, I believe this copies correctly since it iterates over each byte. (which is correct)

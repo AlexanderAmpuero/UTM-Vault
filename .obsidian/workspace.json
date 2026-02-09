@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSC209 Notes/Weekly and Textbook/Week 6 — Structs and File IO.md",
+                "file": "CSC209 Notes/Weekly and Textbook/Week 6 — Processes and Forking.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Week 6 — Structs and File IO"
+              "title": "Week 6 — Processes and Forking"
             }
           }
         ],
@@ -185,10 +185,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4b22039812786cc3",
+  "active": "fa8c07c4e9a93b62",
   "lastOpenFiles": [
+    "CSC209 Notes/Images/Pasted image 20260208203847.png",
+    "CSC209 Notes/Images/Pasted image 20260208203306.png",
+    "CSC209 Notes/Weekly and Textbook/Pasted image 20260208200754.png",
+    "CSC209 Notes/Weekly and Textbook/Week 5 — Structs and File IO.md",
+    "CSC209 Notes/Weekly and Textbook/Week 6 — Processes and Forking.md",
     "CSC209 Notes/Weekly and Textbook/Week 4 — Strings.md",
-    "CSC209 Notes/Weekly and Textbook/Week 6 — Structs and File IO.md",
     "CSC209 Notes/Images/Pasted image 20260125194215.png",
     "CSC209 Notes/Weekly and Textbook/Week 3 — Command-Line Arguments and Dynamic Memory Allocation.md",
     "CSC209 Notes/Weekly and Textbook/Week 1 — Introduction to UNIX.md",
@@ -201,7 +205,6 @@
     "Weekly Tasks.md",
     "CSC209 Notes/Images/Pasted image 20260108210409.png",
     "CSC209 Notes/Images/Pasted image 20260108204158.png",
-    "CSC209 Notes/Images/Pasted image 20260108203930.png",
     "CSC209 Notes/Week 1 - Introduction to UNIX/Untitled.md",
     "CSC209 Notes/Weekly and Textbook",
     "CSC209 Notes/Images",
@@ -219,7 +222,6 @@
     "CSC207 Notes/Weekly and Textbook/Week 4 - OOP and Interfaces.md",
     "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
     "CSC207 Notes/Weekly and Textbook/Week 12 - Exam Review.md",
-    "CSC207 Notes/Images/Pasted image 20251217011647.png",
     "CSC207 Notes/Images",
     "CSC236 Notes/Week 2/Exercise 4 - Practice Problems.md",
     "CSC236 Notes/Week 2/Exercise 3 - Practice Problems.md",
@@ -230,8 +232,6 @@
     "CSC236 Notes/Images",
     "CSC236 Notes/Week 1",
     "CSC236 Notes",
-    "Web Development - Meta/Intro to HTML, CSS, and Javascript.md",
-    "CSC148 Notes/Weekly and Textbook/1 - The Python Memory Model.md",
-    "CSC148 Notes/Weekly and Textbook/6 - Trees and Mutation.md"
+    "Web Development - Meta/Intro to HTML, CSS, and Javascript.md"
   ]
 }
