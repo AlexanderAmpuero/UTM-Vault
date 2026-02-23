@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSC209 Notes/Weekly and Textbook/Week 6 — Processes and Forking.md",
+                "file": "CSC209 Notes/Weekly and Textbook/Week 7 — File Descriptors and Pipes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Week 6 — Processes and Forking"
+              "title": "Week 7 — File Descriptors and Pipes"
             }
           }
         ],
@@ -185,10 +185,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4b22039812786cc3",
+  "active": "fa8c07c4e9a93b62",
   "lastOpenFiles": [
-    "CSC209 Notes/Weekly and Textbook/Week 5 — Structs and File IO.md",
+    "CSC209 Notes/Images/Pasted image 20260223015440.png",
     "CSC209 Notes/Weekly and Textbook/Week 6 — Processes and Forking.md",
+    "CSC209 Notes/Weekly and Textbook/Week 7 — File Descriptors and Pipes.md",
+    "CSC209 Notes/Weekly and Textbook/Week 5 — Structs and File IO.md",
     "CSC209 Notes/Images/Pasted image 20260208203847.png",
     "CSC209 Notes/Images/Pasted image 20260208203306.png",
     "CSC209 Notes/Images/Pasted image 20260208200754.png",
@@ -230,7 +232,6 @@
     "Clippings",
     "CSC236 Notes/Images",
     "CSC236 Notes/Week 1",
-    "CSC236 Notes",
-    "Web Development - Meta/Intro to HTML, CSS, and Javascript.md"
+    "CSC236 Notes"
   ]
 }
