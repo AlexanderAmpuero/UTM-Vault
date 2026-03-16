@@ -5,12 +5,12 @@ In C, bitwise operators allow for the direct manipulation of individual bits wit
 #### 1. Logical vs. Bitwise Operators
 Logical operators (`&&`, `||`) evaluate the "truthiness" of a whole value. Bitwise operators perform calculations on each corresponding pair of bits.
 
-|**Operation**|**Bitwise Operator**|**Description**|
-|---|---|---|
-|**AND**|`&`|Result is 1 only if **both** bits are 1.|
-|**OR**|`\|`|Result is 1 if **at least one** bit is 1.|
-|**XOR**|`^`|Result is 1 if bits are **different** (one 0, one 1).|
-|**NOT**|`~`|Unary operator; flips all 0s to 1s and 1s to 0s.|
+| **Operation** | **Bitwise Operator** | **Description**                                       |
+| ------------- | -------------------- | ----------------------------------------------------- |
+| **AND**       | `&`                  | Result is 1 only if **both** bits are 1.              |
+| **OR**        | `\|`                 | Result is 1 if **at least one** bit is 1.             |
+| **XOR**       | `^`                  | Result is 1 if bits are **different** (one 0, one 1). |
+| **NOT**       | `~`                  | Unary operator; flips all 0s to 1s and 1s to 0s.      |
 
 When evaluating logical operators we see for 
 ```C
@@ -212,7 +212,6 @@ Pipes solve the **Producer-Consumer** synchronization problem via the operating 
 - **Empty Pipe**: If a consumer (reader) tries to read from an empty pipe, the OS **blocks** the `read()` call until data is available.
     
 - **Full Pipe**: If a producer (writer) tries to write to a full pipe, the OS **blocks** the `write()` call until the consumer creates space.
-    
 
 ---
 ### 4. Redirection with `dup2`
