@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSC209 Notes/Weekly and Textbook/Week 10 — Multiplexing IO (Select).md",
+                "file": "CSC209 Notes/Weekly and Textbook/Week 11 — Errors and Makefiles.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Week 10 — Multiplexing IO (Select)"
+              "title": "Week 11 — Errors and Makefiles"
             }
           }
         ],
@@ -187,10 +187,12 @@
   },
   "active": "fa8c07c4e9a93b62",
   "lastOpenFiles": [
+    "CSC209 Notes/Images/Pasted image 20260325111420.png",
+    "CSC209 Notes/Weekly and Textbook/Week 10 — Multiplexing IO (Select).md",
+    "CSC209 Notes/Weekly and Textbook/Week 11 — Errors and Makefiles.md",
     "CSC209 Notes/Images/Pasted image 20260316003224.png",
     "CSC209 Notes/Images/Pasted image 20260316003021.png",
     "CSC209 Notes/Weekly and Textbook/Week 9 — Sockets.md",
-    "CSC209 Notes/Weekly and Textbook/Week 10 — Multiplexing IO (Select).md",
     "CSC209 Notes/Images/Pasted image 20260309145626.png",
     "CSC209 Notes/Images/Pasted image 20260309145257.png",
     "CSC209 Notes/Images/Pasted image 20260309145139.png",
@@ -207,7 +209,6 @@
     "CSC209 Notes/Images/Pasted image 20260208203306.png",
     "CSC209 Notes/Images/Pasted image 20260208200754.png",
     "CSC209 Notes/Images/Pasted image 20260125194215.png",
-    "CSC209 Notes/Images/Pasted image 20260118213652.png",
     "Weekly Tasks.md",
     "CSC209 Notes/Week 1 - Introduction to UNIX/Untitled.md",
     "CSC209 Notes/Weekly and Textbook",
@@ -227,7 +228,6 @@
     "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
     "CSC207 Notes/Weekly and Textbook/Week 12 - Exam Review.md",
     "CSC207 Notes/Images",
-    "CSC236 Notes/Week 2/Exercise 4 - Practice Problems.md",
     "CSC236 Notes/Week 2",
     "Clippings",
     "CSC236 Notes/Images",
