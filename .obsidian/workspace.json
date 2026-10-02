@@ -8,43 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5bb0f81079c11940",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CSC207 Notes/Weekly and Textbook/Week 1 - Java Basics.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Week 1 - Java Basics"
-            }
-          },
-          {
             "id": "4b22039812786cc3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSC209 Notes/Weekly and Textbook/Week 3 — Command-Line Arguments and Dynamic Memory Allocation.md",
+                "file": "ISP350 Notes/W1/Summary of Readings.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Week 3 — Command-Line Arguments and Dynamic Memory Allocation"
+              "title": "Summary of Readings"
             }
           },
           {
-            "id": "aeeaa0d25901c59a",
+            "id": "9f08b750d45ee6d2",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.12.7"
+                "file": "ISP350 Notes/W3/Summary of Reading.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.12.7"
+              "icon": "lucide-file",
+              "title": "Summary of Reading"
             }
           }
         ],
@@ -68,7 +56,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -197,10 +187,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4b22039812786cc3",
+  "active": "fa8c07c4e9a93b62",
   "lastOpenFiles": [
-    "CSC209 Notes/Weekly and Textbook/Week 2 — C Programming,  Arrays and Pointers.md",
+    "ISP350 Notes/W4/Selfe & Selfe (1994) PoliticsInterfacePower-1994.pdf",
+    "ISP350 Notes/W4",
+    "ISP350 Notes/W1/Summary of Readings.md",
+    "ISP350 Notes/W1/Haas (1996) Writing Technology_26_07_24_15_52_47.pdf",
+    "ISP350 Notes/W2/Ferris & Hedgcock (2023) Teaching_L2_Composition_Purpose_Process_and_Practi..._----_(1_Concepts_in_Writing_and_Learning_to_Write_in_a_Second_Language).pdf",
+    "ISP350 Notes/W3/Summary of Reading.md",
+    "ISP350 Notes/W3/Bolter+%282001%29+Writing+Space_26_07_25_13_31_59-pages-deleted.pdf",
+    "ISP350 Notes/W3",
+    "ISP350 Notes/W2/Summary of Readings.md",
+    "ISP350 Notes/W1/Baron (2009) preface.pdf",
+    "ISP350 Notes/W2",
+    "ISP350 Notes/W1/Marche (2022) the college essay is dead.pdf",
     "CSC209 Notes/Weekly and Textbook/Week 3 — Command-Line Arguments and Dynamic Memory Allocation.md",
+    "ISP350 Notes/W1",
+    "ISP350 Notes",
+    "CSC209 Notes/Weekly and Textbook/Week 2 — C Programming,  Arrays and Pointers.md",
     "CSC209 Notes/Weekly and Textbook/Week 4 — Strings.md",
     "CSC209 Notes/Weekly and Textbook/Week 11 — Errors and Makefiles.md",
     "CSC209 Notes/Images/Pasted image 20260325111420.png",
@@ -222,11 +226,7 @@
     "CSC209 Notes/Images/Pasted image 20260208200754.png",
     "Weekly Tasks.md",
     "CSC209 Notes/Week 1 - Introduction to UNIX/Untitled.md",
-    "CSC209 Notes/Weekly and Textbook",
-    "CSC209 Notes/Images",
     "CSC207 Notes/Weekly and Textbook/Week 1 - Java Basics.md",
-    "CSC209 Notes/Week 1 - Introduction to UNIX",
-    "CSC209 Notes",
     "CSC207 Notes/Weekly and Textbook/Week 6 - SCRUM, MVC, and Design Patterns.md",
     "CSC207 Notes/Weekly and Textbook/Week 9 - Visitor, Builder and SOLID Principles.md",
     "CSC207 Notes/Weekly and Textbook/Week 8 - Strategy, Command, and Composite.md",
@@ -234,15 +234,6 @@
     "CSC207 Notes/Weekly and Textbook/Week 5 - JavaFX.md",
     "CSC207 Notes/Weekly and Textbook/Week 10 - Regular Expressions, FSMs, and JavaIO.md",
     "CSC207 Notes/Weekly and Textbook/Week 11 - IEEE and Floating Point.md",
-    "CSC207 Notes/Weekly and Textbook/Week 3 - Inheritance, JUnit, Interface, and UML Diagrams.md",
-    "CSC207 Notes/Weekly and Textbook/Week 4 - OOP and Interfaces.md",
-    "CSC207 Notes/Weekly and Textbook/Week 2 - Classes and Objects.md",
-    "CSC207 Notes/Weekly and Textbook/Week 12 - Exam Review.md",
-    "CSC207 Notes/Images",
-    "CSC236 Notes/Week 2",
-    "Clippings",
-    "CSC236 Notes/Images",
-    "CSC236 Notes/Week 1",
-    "CSC236 Notes"
+    "CSC207 Notes/Weekly and Textbook/Week 3 - Inheritance, JUnit, Interface, and UML Diagrams.md"
   ]
 }
