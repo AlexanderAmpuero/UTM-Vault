@@ -27,16 +27,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ISP350 Notes/W3/Summary of Reading.md",
+                "file": "ISP350 Notes/W5/Summary of Reading.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "Summary of Reading"
             }
+          },
+          {
+            "id": "18110b2850202adc",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.14.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.14.4"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -187,23 +199,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fa8c07c4e9a93b62",
+  "active": "18110b2850202adc",
   "lastOpenFiles": [
+    "ISP350 Notes/W5/Summary of Reading.md",
+    "ISP350 Notes/W3/Summary of Reading.md",
+    "ISP350 Notes/W5/Jones & Hafner (2021) Understanding Digital Literacies_26_08_19_21_57_11.pdf",
+    "ISP350 Notes/W5",
+    "ISP350 Notes/Untitled.md",
     "ISP350 Notes/W4/Selfe & Selfe (1994) PoliticsInterfacePower-1994.pdf",
     "ISP350 Notes/W4",
     "ISP350 Notes/W1/Summary of Readings.md",
     "ISP350 Notes/W1/Haas (1996) Writing Technology_26_07_24_15_52_47.pdf",
     "ISP350 Notes/W2/Ferris & Hedgcock (2023) Teaching_L2_Composition_Purpose_Process_and_Practi..._----_(1_Concepts_in_Writing_and_Learning_to_Write_in_a_Second_Language).pdf",
-    "ISP350 Notes/W3/Summary of Reading.md",
     "ISP350 Notes/W3/Bolter+%282001%29+Writing+Space_26_07_25_13_31_59-pages-deleted.pdf",
     "ISP350 Notes/W3",
     "ISP350 Notes/W2/Summary of Readings.md",
     "ISP350 Notes/W1/Baron (2009) preface.pdf",
     "ISP350 Notes/W2",
-    "ISP350 Notes/W1/Marche (2022) the college essay is dead.pdf",
     "CSC209 Notes/Weekly and Textbook/Week 3 — Command-Line Arguments and Dynamic Memory Allocation.md",
-    "ISP350 Notes/W1",
-    "ISP350 Notes",
     "CSC209 Notes/Weekly and Textbook/Week 2 — C Programming,  Arrays and Pointers.md",
     "CSC209 Notes/Weekly and Textbook/Week 4 — Strings.md",
     "CSC209 Notes/Weekly and Textbook/Week 11 — Errors and Makefiles.md",
@@ -233,7 +246,6 @@
     "CSC207 Notes/Weekly and Textbook/Week 7 - Singleton, Iterator, and Factory.md",
     "CSC207 Notes/Weekly and Textbook/Week 5 - JavaFX.md",
     "CSC207 Notes/Weekly and Textbook/Week 10 - Regular Expressions, FSMs, and JavaIO.md",
-    "CSC207 Notes/Weekly and Textbook/Week 11 - IEEE and Floating Point.md",
-    "CSC207 Notes/Weekly and Textbook/Week 3 - Inheritance, JUnit, Interface, and UML Diagrams.md"
+    "CSC207 Notes/Weekly and Textbook/Week 11 - IEEE and Floating Point.md"
   ]
 }
